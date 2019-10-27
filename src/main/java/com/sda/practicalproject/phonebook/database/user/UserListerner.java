@@ -6,7 +6,6 @@ import javax.persistence.PostPersist;
 
 public class UserListerner {
 
-
     @PostPersist
     public void personCreated(User user){
         System.out.println("User created: " + user.getUsername());

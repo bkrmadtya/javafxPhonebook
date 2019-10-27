@@ -8,7 +8,6 @@ import java.util.function.Function;
 
 public class RegistryDAO {
 
-
     public static void createRegistry(Registry registry) {
         query(session -> {
             session.save(registry);
