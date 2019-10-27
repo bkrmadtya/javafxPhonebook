@@ -32,9 +32,7 @@ public class UserRegisterController {
     private void handleUserRegister(ActionEvent event) {
         if(QueryDAO.usernameIsUnique(usernameText.getText())){
             User user = new User(usernameText.getText(), passwordText.getText());
-
             UserDAO.createUser(user);
-
 
             try {
                 Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/login.fxml")));

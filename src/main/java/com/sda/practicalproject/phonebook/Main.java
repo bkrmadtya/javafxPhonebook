@@ -16,18 +16,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         Session session = SessionManager.getSessionFactory().openSession();
         launch(args);
-
-//        queries();
-
-//        SessionManager.shutdown();
-    }
-
-    private static void queries(){
-
-//        RegistryDAO.createPerson(new Registry("Bikram Karki", "Kathmandu, Nepal", "karki.bikram007@gmail.com",358442354248L ));
-        UserDAO.createUser(new User("bikram", "Karki"));
-
-//        QueryDAO.getAllRegistry();
     }
 
     @Override
