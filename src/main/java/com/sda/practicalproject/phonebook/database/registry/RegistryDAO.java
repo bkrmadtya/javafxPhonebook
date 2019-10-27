@@ -8,30 +8,31 @@ import java.util.function.Function;
 
 public class RegistryDAO {
 
-    public static Session session = SessionManager.getSessionFactory().getCurrentSession();
 
-    public static void createRegistry(Registry registry){
+    public static void createRegistry(Registry registry) {
         query(session -> {
             session.save(registry);
             return registry;
         });
     }
 
-    private static void query(Function<Session, Registry> function){
+    private static void query(Function<Session, Registry> function) {
+        Session session = SessionManager.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
 
-        try{
+        try {
             transaction = session.beginTransaction();
 
             function.apply(session);
 
             transaction.commit();
-        } catch (Exception e){
-            if(transaction != null){
+        } catch (Exception e) {
+            if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
         }
+        session.close();
     }
 
 

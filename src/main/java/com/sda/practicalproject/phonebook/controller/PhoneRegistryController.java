@@ -33,20 +33,22 @@ public class PhoneRegistryController {
     private ListView registryList;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
+        registryList.getItems().clear();
         List<Registry> registry = QueryDAO.getAllRegistry();
 
         registry.forEach(registry1 -> {
             data.add(registry1.toString());
         });
 
-        data.forEach(System.out::println);
-            registryList.setItems(data);
+//        data.forEach(System.out::println);
+        registryList.setItems(data);
+
     }
 
     @FXML
-    private void createRegistry(){
-        Registry registry = new Registry(nameText.getText(),addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
+    private void createRegistry() {
+        Registry registry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
 
         RegistryDAO.createRegistry(registry);
 

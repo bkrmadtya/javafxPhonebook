@@ -13,9 +13,9 @@ import java.util.Properties;
 public class SessionManager {
     private static SessionFactory sessionFactory;
 
-    public static SessionFactory getSessionFactory(){
-        if(sessionFactory == null){
-            try{
+    public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            try {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
 
@@ -28,6 +28,7 @@ public class SessionManager {
                 settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
+
                 configuration.addAnnotatedClass(User.class);
                 configuration.addAnnotatedClass(Registry.class);
 
@@ -36,14 +37,14 @@ public class SessionManager {
                         .build();
 
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         return sessionFactory;
     }
 
-    public static void shutdown(){
+    public static void shutdown() {
         getSessionFactory().close();
     }
 }

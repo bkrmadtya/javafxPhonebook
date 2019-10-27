@@ -1,5 +1,6 @@
 package com.sda.practicalproject.phonebook;
 
+
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.database.user.UserDAO;
 import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
@@ -9,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.hibernate.Session;
-
 
 public class Main extends Application {
 
