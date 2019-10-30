@@ -5,14 +5,14 @@ import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 import java.util.List;
 
 public class PhoneRegistryController {
-    ObservableList<String> data = FXCollections.observableArrayList();
 
     @FXML
     private TextField nameText;
@@ -30,18 +30,39 @@ public class PhoneRegistryController {
     private Button createButton;
 
     @FXML
-    private ListView registryList;
+    private TableView<Registry> registryTableView;
+
+    @FXML
+    private TableColumn<String, Registry> nameColumn;
+
+    @FXML
+    private TableColumn<String, Registry> phoneColumn;
+
+    @FXML
+    private TableColumn<String, Registry> addressColumn;
+
+    @FXML
+    private TableColumn<Long, Registry> emailColumn;
+
 
     @FXML
     private void initialize() {
-        registryList.getItems().clear();
-        List<Registry> registry = QueryDAO.getAllRegistry();
+        List<Registry> contacts = QueryDAO.getAllRegistry();
 
-        registry.forEach(registry1 -> {
-            data.add(registry1.toString());
+        setColumnValues();
+
+        contacts.forEach(contact -> {
+            registryTableView.getItems().add(contact);
         });
 
-        registryList.setItems(data);
+    }
+
+    // Maps the field's name from entry class to the column name
+    private void setColumnValues(){
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("personName"));
+        phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
     }
 
     @FXML
