@@ -1,8 +1,6 @@
 package com.sda.practicalproject.phonebook;
 
 
-import com.sda.practicalproject.phonebook.database.user.User;
-import com.sda.practicalproject.phonebook.database.user.UserDAO;
 import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,15 +15,12 @@ public class Main extends Application {
         Session session = SessionManager.getSessionFactory().openSession();
         launch(args);
 
-//        queries();
-
-//        SessionManager.shutdown();
     }
 
-    private static void queries(){
+    private static void queries() {
 
 //        RegistryDAO.createPerson(new Registry("Bikram Karki", "Kathmandu, Nepal", "karki.bikram007@gmail.com",358442354248L ));
-        UserDAO.createUser(new User("bikram", "Karki"));
+//        UserDAO.createUser(new User("bikram", "Karki"));
 
 //        QueryDAO.getAllRegistry();
     }

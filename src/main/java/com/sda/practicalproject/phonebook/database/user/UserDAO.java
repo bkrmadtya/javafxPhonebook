@@ -31,5 +31,6 @@ public class UserDAO {
             }
             e.printStackTrace();
         }
+        session.close();
     }
 }
