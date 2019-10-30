@@ -14,6 +14,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         Session session = SessionManager.getSessionFactory().openSession();
         launch(args);
+<<<<<<< HEAD
 
     }
 
@@ -23,6 +24,8 @@ public class Main extends Application {
 //        UserDAO.createUser(new User("bikram", "Karki"));
 
 //        QueryDAO.getAllRegistry();
+=======
+>>>>>>> b22f78c936ae72452e32bcf44a835eb64e4c6871
     }
 
     @Override

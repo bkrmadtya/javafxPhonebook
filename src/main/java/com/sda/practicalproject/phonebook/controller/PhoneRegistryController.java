@@ -41,22 +41,18 @@ public class PhoneRegistryController {
             data.add(registry1.toString());
         });
 
-//        data.forEach(System.out::println);
         registryList.setItems(data);
-
     }
 
     @FXML
     private void createRegistry() {
         Registry registry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
-
         RegistryDAO.createRegistry(registry);
 
         nameText.setText("");
         addressText.setText("");
         emailText.setText("");
         phoneText.setText("");
-
 
         this.initialize();
     }
