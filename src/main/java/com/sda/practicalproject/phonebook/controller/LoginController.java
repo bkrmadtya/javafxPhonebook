@@ -16,7 +16,7 @@ public class LoginController {
     private TextField usernameText;
 
     @FXML
-    private TextField passwordText;
+    private PasswordField passwordText;
 
     @FXML
     private Button loginButton;

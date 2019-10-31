@@ -57,7 +57,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <TableView fx:id="registryTableView" editable="true" onMouseClicked="#isSelected" fixedCellSize="-12.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+            <TableView fx:id="registryTableView" editable="true" fixedCellSize="-12.0" onMouseClicked="#isSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
