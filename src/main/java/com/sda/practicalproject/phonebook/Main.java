@@ -1,6 +1,8 @@
 package com.sda.practicalproject.phonebook;
 
 
+import com.sda.practicalproject.phonebook.database.registry.Registry;
+import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         Session session = SessionManager.getSessionFactory().openSession();
         launch(args);
+
+        //RegistryDAO.updateRegistry(new Registry("Bikram Karki", "Kathmandu, Nepal", "karki.bikram007@gmail.con", 4992077L), 1L);
+
+//        RegistryDAO.deleteRegistry(3L);
     }
 
     @Override

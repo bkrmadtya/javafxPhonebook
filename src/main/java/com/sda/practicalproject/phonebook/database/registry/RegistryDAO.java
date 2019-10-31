@@ -20,7 +20,7 @@ public class RegistryDAO {
     public static void deleteRegistry(Long id) {
         query(session -> {
             Registry registry = session.find(Registry.class, id);
-            session.delete(id);
+            session.delete(registry);
             return registry;
         });
     }
@@ -37,7 +37,7 @@ public class RegistryDAO {
                     "phoneNumber=:phoneNumber, " +
                     "email=:email, " +
                     "address=:address " +
-                    "where registryId=:id";
+                    "where registryId=:registryId";
 
             Query query = session.createQuery(hql);
             query.setParameter("personName", updatedRegistry.getPersonName())

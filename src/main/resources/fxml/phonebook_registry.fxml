@@ -11,8 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<!-- fx:controller="fxml.Registry"-->
 
-<AnchorPane  prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.PhoneRegistryController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.PhoneRegistryController">
    <children>
       <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -56,7 +57,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <TableView fx:id="registryTableView" editable="true" fixedCellSize="-12.0">
+            <TableView fx:id="registryTableView" editable="true" onMouseClicked="#isSelected" fixedCellSize="-12.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
