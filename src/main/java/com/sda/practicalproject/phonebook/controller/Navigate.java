@@ -9,9 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Navigate {
-    public static void goTo(Node node, String path){
+    public static void goTo(Node node, String path) {
         try {
-            Parent root = FXMLLoader.load((Navigate.class.getClassLoader().getResource(path)));
+            Parent root = FXMLLoader.load((Navigate.class.getResource(path)));
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
 

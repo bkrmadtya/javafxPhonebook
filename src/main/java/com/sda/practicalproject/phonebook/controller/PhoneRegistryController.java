@@ -2,15 +2,15 @@ package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import org.hibernate.loader.Loader;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,13 +20,13 @@ import java.util.logging.Logger;
 
 public class PhoneRegistryController {
     @FXML
-    private Label createNewButton;
+    private HBox createNewButton;
 
     @FXML
-    private Label editButton;
+    private HBox editButton;
 
     @FXML
-    private Label deleteButton;
+    private HBox deleteButton;
 
     @FXML
     private TextField nameText;
@@ -39,9 +39,6 @@ public class PhoneRegistryController {
 
     @FXML
     private TextField phoneText;
-
-    @FXML
-    private Button createButton;
 
     @FXML
     private TableView<Registry> registryTableView;
@@ -74,7 +71,6 @@ public class PhoneRegistryController {
         });
     }
 
-
     // Maps the field's name from entry class to the column name
     private void setColumnValues() {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("personName"));
@@ -86,14 +82,14 @@ public class PhoneRegistryController {
     @FXML
     private void isSelected() {
         Long id = null;
-        try{
+        try {
             id = (Long) registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
 
-            if(id != null){
+            if (id != null) {
                 editButton.setVisible(true);
                 deleteButton.setVisible(true);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Empty row selected");
         }
     }
@@ -104,7 +100,19 @@ public class PhoneRegistryController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete registry?");
+        alert.setHeaderText(null);
         alert.setContentText("Do you really want to delete this entry?");
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image("icons/warning.png"));
+
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
+
+        Button yesButton = (Button) alert.getDialogPane().lookupButton(ButtonType.YES);
+        yesButton.setDefaultButton(false);
+
+        Button noButton = (Button) alert.getDialogPane().lookupButton(ButtonType.NO);
+        noButton.setDefaultButton(true);
 
         Optional<ButtonType> result = alert.showAndWait();
 
@@ -120,21 +128,21 @@ public class PhoneRegistryController {
         String name = registryTableView.getSelectionModel().getSelectedItem().getPersonName();
         String address = registryTableView.getSelectionModel().getSelectedItem().getAddress();
         String email = registryTableView.getSelectionModel().getSelectedItem().getEmail();
-        Long phoneNumber =  registryTableView.getSelectionModel().getSelectedItem().getPhoneNumber();
-        Long id =  registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
+        Long phoneNumber = registryTableView.getSelectionModel().getSelectedItem().getPhoneNumber();
+        Long id = registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/update_registry.fxml"));
 
-        try{
+        try {
             loader.load();
-        }catch (IOException e){
+        } catch (IOException e) {
             Logger.getLogger(PhoneRegistryController.class.getName()).log(Level.SEVERE, null, e);
         }
 
 
         UpdateRegistryController updateRegistryController = loader.getController();
-        updateRegistryController.fillData(name , address , email, phoneNumber,id);
+        updateRegistryController.fillData(name, address, email, phoneNumber, id);
 
         Parent root = loader.getRoot();
         Stage stage = (Stage) registryTableView.getScene().getWindow();
@@ -143,11 +151,11 @@ public class PhoneRegistryController {
 
     @FXML
     private void goToCreateScene() {
-        navigateTo("fxml/create_registry.fxml");
+        navigateTo("/fxml/create_registry.fxml");
     }
 
 
-    private void navigateTo(String path){
+    private void navigateTo(String path) {
         Navigate.goTo(registryTableView, path);
     }
 }

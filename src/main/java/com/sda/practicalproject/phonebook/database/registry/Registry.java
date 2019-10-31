@@ -7,7 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name="registry")
+@Table(name = "registry")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,7 +30,7 @@ public class Registry {
     @Column
     private long phoneNumber;
 
-    public Registry(String name, String address, String email, long phoneNumber){
+    public Registry(String name, String address, String email, long phoneNumber) {
         this.personName = name;
         this.address = address;
         this.email = email;
@@ -42,6 +42,6 @@ public class Registry {
         return personName + " " +
                 address + " " +
                 email + " " +
-                + phoneNumber ;
+                +phoneNumber;
     }
 }

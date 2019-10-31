@@ -1,74 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- fx:controller="fxml.Registry"-->
+
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<!-- fx:controller="fxml.Registry"-->
-
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.PhoneRegistryController">
-   <children>
-      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <GridPane alignment="CENTER">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints fillHeight="false" valignment="CENTER" vgrow="NEVER" />
-              </rowConstraints>
-               <children>
-                  <Label fx:id="createNewButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToCreateScene" text="Create new" textFill="#48a14b" wrapText="true" GridPane.halignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Registry List" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="editButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToEditRegistry" text="Edit" textFill="#4a9bba" wrapText="true" GridPane.columnIndex="6" GridPane.halignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteRegistry" text="Delete" textFill="#b94545" wrapText="true" GridPane.columnIndex="7" GridPane.halignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" top="10.0" />
-               </padding>
-            </GridPane>
-            <TableView fx:id="registryTableView" editable="true" fixedCellSize="-12.0" onMouseClicked="#isSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
-              <columns>
-                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
-                <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
-                  <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Address" />
-                  <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </children>
-      </VBox>
-   </children>
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints fillHeight="false" valignment="CENTER" vgrow="NEVER" />
+                    </rowConstraints>
+                    <children>
+                  <HBox fx:id="createNewButton" alignment="CENTER">
+                     <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToCreateScene" text="Add" textFill="#2cbf9b" wrapText="true">
+                                  <font>
+                                      <Font name="System Bold" size="12.0" />
+                                  </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                              </Label>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/add.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Registry List" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                  <HBox fx:id="editButton" alignment="CENTER" GridPane.columnIndex="6">
+                     <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToEditRegistry" text="Edit" textFill="#378cab" wrapText="true">
+                                  <font>
+                                      <Font name="System Bold" size="12.0" />
+                                  </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                              </Label>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="deleteButton" alignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                     <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteRegistry" text="Delete" textFill="#b94545" wrapText="true">
+                                  <font>
+                                      <Font name="System Bold" size="12.0" />
+                                  </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                              </Label>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/delete.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </GridPane>
+                <TableView fx:id="registryTableView" editable="true" fixedCellSize="25.0" onMouseClicked="#isSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                        <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
+                        <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Address" />
+                        <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

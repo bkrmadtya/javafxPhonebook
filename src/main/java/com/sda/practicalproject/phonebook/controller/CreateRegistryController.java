@@ -49,7 +49,7 @@ public class CreateRegistryController {
     @FXML
     private void goToRegister() {
         try {
-            Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/phonebook_registry.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("/fxml/phonebook_registry.fxml")));
             Stage stage = (Stage) cancelButton.getScene().getWindow();
             stage.setScene(new Scene(root));
 

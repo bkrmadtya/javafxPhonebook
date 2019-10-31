@@ -49,8 +49,8 @@ public class RegistryDAO {
             int rows = query.executeUpdate();
 
             transaction.commit();
-        }catch (Exception e){
-            if(transaction != null){
+        } catch (Exception e) {
+            if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();

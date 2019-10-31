@@ -18,7 +18,7 @@ public class QueryDAO {
         Query query = session.createQuery("from User where username=:username");
         query.setParameter("username", username);
 
-        User user =  (User) query.uniqueResult();
+        User user = (User) query.uniqueResult();
         session.close();
         return user;
     }
@@ -49,7 +49,7 @@ public class QueryDAO {
         return query.list();
     }
 
-    public static boolean usernameIsUnique(String username){
+    public static boolean usernameIsUnique(String username) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         boolean result = true;
         User user = getUserByName(username);

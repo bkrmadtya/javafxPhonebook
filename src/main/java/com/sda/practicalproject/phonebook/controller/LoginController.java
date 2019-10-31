@@ -1,14 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class LoginController {
 
@@ -34,30 +27,24 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-       if(QueryDAO.isValidUser(usernameText.getText(), passwordText.getText())){
-           try {
-               Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/phonebook_registry.fxml")));
-               Stage stage = (Stage) loginButton.getScene().getWindow();
-               stage.setScene(new Scene(root));
+        if(usernameText.getText().isEmpty() || passwordText.getText().isEmpty()){
+            errorText.setText("Missing credentials!");
+        } else {
+            login();
+        }
+    }
 
-           } catch (IOException io) {
-               io.printStackTrace();
-           }
-       } else {
+    private void login(){
+        if (QueryDAO.isValidUser(usernameText.getText(), passwordText.getText())) {
+            Navigate.goTo(loginButton, "/fxml/phonebook_registry.fxml");
+        } else {
             errorText.setText("Invalid Username or Password!");
-       }
+        }
     }
 
     @FXML
-    private void goToRegister(){
-        try {
-            Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/register_user.fxml")));
-            Stage stage = (Stage) registerUser.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (IOException io) {
-            io.printStackTrace();
-        }
-
+    private void goToRegister() {
+        Navigate.goTo(loginButton, "/fxml/register_user.fxml");
     }
 
 }

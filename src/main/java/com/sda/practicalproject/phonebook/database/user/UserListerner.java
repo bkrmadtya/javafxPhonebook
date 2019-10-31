@@ -7,12 +7,12 @@ import javax.persistence.PostPersist;
 public class UserListerner {
 
     @PostPersist
-    public void personCreated(User user){
+    public void personCreated(User user) {
         System.out.println("User created: " + user.getUsername());
     }
 
     @PostLoad
-    public void printUser(User user){
+    public void printUser(User user) {
         System.out.println("User loaded: " + user.getUsername());
     }
 }
