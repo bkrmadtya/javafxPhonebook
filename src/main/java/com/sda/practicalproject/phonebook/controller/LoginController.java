@@ -33,14 +33,13 @@ public class LoginController {
     }
 
     @FXML
-    private void handleLogin(ActionEvent event) {
+    private void handleLogin() {
        if(QueryDAO.isValidUser(usernameText.getText(), passwordText.getText())){
            try {
                Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/phonebook_registry.fxml")));
                Stage stage = (Stage) loginButton.getScene().getWindow();
                stage.setScene(new Scene(root));
 
-               QueryDAO.getAllRegistry();
            } catch (IOException io) {
                io.printStackTrace();
            }
@@ -50,7 +49,7 @@ public class LoginController {
     }
 
     @FXML
-    private void goToRegister(ActionEvent event){
+    private void goToRegister(){
         try {
             Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/register_user.fxml")));
             Stage stage = (Stage) registerUser.getScene().getWindow();

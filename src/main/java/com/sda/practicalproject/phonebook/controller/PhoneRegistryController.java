@@ -5,11 +5,16 @@ import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PhoneRegistryController {
@@ -66,15 +71,25 @@ public class PhoneRegistryController {
     }
 
     @FXML
-    private void createRegistry() {
-        Registry registry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
-        RegistryDAO.createRegistry(registry);
+    private void goToEditRegistry(){
 
-        nameText.setText("");
-        addressText.setText("");
-        emailText.setText("");
-        phoneText.setText("");
+    }
 
-        this.initialize();
+
+    @FXML
+    private void deleteRegistry(){
+
+    }
+
+    @FXML
+    private void goToCreateScene(){
+        try {
+            Parent root = FXMLLoader.load((getClass().getClassLoader().getResource("fxml/create_registry.fxml")));
+            Stage stage = (Stage) registryTableView.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
+
     }
 }
