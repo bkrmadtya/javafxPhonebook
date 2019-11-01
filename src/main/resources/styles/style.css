@@ -5,10 +5,7 @@
     -fx-background-color: #ddd;
 }
 
-.button{
-    -fx-background-color: red;
-}
-
-.button:hover {
-    -fx-background-color: #ccc;
+#kebabMenu{
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #aaa;
 }
