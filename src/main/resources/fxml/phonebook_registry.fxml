@@ -60,7 +60,7 @@
                         </Label>
                   <HBox fx:id="editButton" alignment="CENTER" GridPane.columnIndex="6">
                      <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToEditRegistry" text="Edit" textFill="#378cab" wrapText="true">
+                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToUpdateRegistry" text="Edit" textFill="#378cab" wrapText="true">
                                   <font>
                                       <Font name="System Bold" size="12.0" />
                                   </font>
@@ -97,7 +97,7 @@
                         <Insets bottom="10.0" top="10.0" />
                     </padding>
                 </GridPane>
-                <TableView fx:id="registryTableView" editable="true" fixedCellSize="25.0" onMouseClicked="#isSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                <TableView fx:id="registryTableView" editable="true" fixedCellSize="25.0" onMouseClicked="#rowIsSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
                         <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />

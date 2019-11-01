@@ -2,23 +2,19 @@ package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
+import com.sda.practicalproject.phonebook.database.user.User;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class PhoneRegistryController {
+
     @FXML
     private HBox createNewButton;
 
@@ -55,6 +51,7 @@ public class PhoneRegistryController {
     @FXML
     private TableColumn<Long, Registry> emailColumn;
 
+    private User loggedInUser;
 
     @FXML
     private void initialize() {
@@ -69,6 +66,12 @@ public class PhoneRegistryController {
         contacts.forEach(contact -> {
             registryTableView.getItems().add(contact);
         });
+
+    }
+
+    public void setUser(User user) {
+        this.loggedInUser = user;
+        System.out.println("Logged in user : " + loggedInUser.getUsername());
     }
 
     // Maps the field's name from entry class to the column name
@@ -80,7 +83,7 @@ public class PhoneRegistryController {
     }
 
     @FXML
-    private void isSelected() {
+    private void rowIsSelected() {
         Long id = null;
         try {
             id = (Long) registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
@@ -116,7 +119,7 @@ public class PhoneRegistryController {
 
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.get() == ButtonType.OK) {
+        if (result.get() == ButtonType.YES) {
             RegistryDAO.deleteRegistry(id);
             System.out.println(id);
         }
@@ -124,38 +127,29 @@ public class PhoneRegistryController {
     }
 
     @FXML
-    private void goToEditRegistry() {
+    private void goToUpdateRegistry() {
         String name = registryTableView.getSelectionModel().getSelectedItem().getPersonName();
         String address = registryTableView.getSelectionModel().getSelectedItem().getAddress();
         String email = registryTableView.getSelectionModel().getSelectedItem().getEmail();
         Long phoneNumber = registryTableView.getSelectionModel().getSelectedItem().getPhoneNumber();
         Long id = registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/update_registry.fxml"));
+        Navigate.withParameter(loader -> {
+            UpdateRegistryController updateRegistryController = loader.getController();
+            updateRegistryController.fillData(name, address, email, phoneNumber, id, loggedInUser);
 
-        try {
-            loader.load();
-        } catch (IOException e) {
-            Logger.getLogger(PhoneRegistryController.class.getName()).log(Level.SEVERE, null, e);
-        }
-
-
-        UpdateRegistryController updateRegistryController = loader.getController();
-        updateRegistryController.fillData(name, address, email, phoneNumber, id);
-
-        Parent root = loader.getRoot();
-        Stage stage = (Stage) registryTableView.getScene().getWindow();
-        stage.setScene(new Scene(root));
+            return updateRegistryController;
+        }, registryTableView, "/fxml/update_registry.fxml");
     }
 
     @FXML
     private void goToCreateScene() {
-        navigateTo("/fxml/create_registry.fxml");
+        Navigate.withParameter(loader -> {
+            CreateRegistryController createRegistryController = loader.getController();
+            createRegistryController.setCreatorId(loggedInUser);
+
+            return createRegistryController;
+        }, registryTableView, "/fxml/create_registry.fxml");
     }
 
-
-    private void navigateTo(String path) {
-        Navigate.goTo(registryTableView, path);
-    }
 }

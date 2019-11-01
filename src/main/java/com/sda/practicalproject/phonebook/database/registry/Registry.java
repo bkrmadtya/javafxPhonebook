@@ -30,11 +30,18 @@ public class Registry {
     @Column
     private long phoneNumber;
 
+    @Column
+    private Long creatorId;
+
     public Registry(String name, String address, String email, long phoneNumber) {
         this.personName = name;
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
+    }
+
+    public void setCreatorId(Long id) {
+        this.creatorId = id;
     }
 
     @Override

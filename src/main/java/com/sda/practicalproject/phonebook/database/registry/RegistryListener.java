@@ -9,7 +9,7 @@ public class RegistryListener {
 
     @PostPersist
     public void registryCreated(Registry registry) {
-        System.out.println("Registry created: " + registry.getPersonName());
+        System.out.println("Registry created: " + registry.getPersonName()  + " by creator " + registry.getCreatorId());
     }
 
     @PostRemove

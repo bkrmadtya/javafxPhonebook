@@ -11,7 +11,7 @@ import java.util.List;
 public class QueryDAO {
 
 
-    private static User getUserByName(String username) {
+    public static User getUserByName(String username) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
 
@@ -21,19 +21,6 @@ public class QueryDAO {
         User user = (User) query.uniqueResult();
         session.close();
         return user;
-    }
-
-    public static boolean isValidUser(String username, String password) {
-        Session session = SessionManager.getSessionFactory().getCurrentSession();
-        boolean result = false;
-        User user = getUserByName(username);
-
-        if (user != null && user.getPassword().equals(password)) {
-            result = true;
-        }
-
-        session.close();
-        return result;
     }
 
     public static List<User> getAllUser() {

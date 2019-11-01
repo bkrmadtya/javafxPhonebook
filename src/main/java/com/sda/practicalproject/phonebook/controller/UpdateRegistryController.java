@@ -2,6 +2,7 @@ package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
+import com.sda.practicalproject.phonebook.database.user.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -29,17 +30,22 @@ public class UpdateRegistryController {
 
     private Long id;
 
-    public void fillData(String name, String address, String email, Long phoneNumber, Long id) {
+    private User creator;
+
+    public void fillData(String name, String address, String email, Long phoneNumber, Long id, User creator) {
         this.nameText.setText(name);
         this.addressText.setText(address);
         this.emailText.setText(email);
         this.phoneText.setText(String.valueOf(phoneNumber));
         this.id = id;
+        this.creator = creator;
     }
 
     @FXML
     private void updateRegistry() {
         Registry updatedRegistry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
+        updatedRegistry.setCreatorId(creator.getUserId());
+
         RegistryDAO.updateRegistry(updatedRegistry, id);
 
         nameText.setText("");
@@ -52,7 +58,10 @@ public class UpdateRegistryController {
 
     @FXML
     private void goToRegister() {
-        Navigate.goTo(cancelButton, "/fxml/phonebook_registry.fxml");
+        Navigate.withParameter(loader -> {
+            PhoneRegistryController phoneRegistryController = loader.getController();
+            phoneRegistryController.setUser(creator);
+            return phoneRegistryController;
+        }, createButton, "/fxml/phonebook_registry.fxml");
     }
-
 }
