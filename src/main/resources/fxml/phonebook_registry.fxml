@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.PhoneRegistryController">
@@ -23,20 +24,42 @@
             <children>
                 <GridPane alignment="CENTER">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="135.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="51.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="112.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="49.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="115.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints fillHeight="false" valignment="CENTER" vgrow="NEVER" />
                     </rowConstraints>
                     <children>
-                  <HBox fx:id="createNewButton" alignment="CENTER">
+                  <VBox fx:id="kebabMenu" alignment="CENTER" prefHeight="43.0" prefWidth="27.0" styleClass=".button" stylesheets="@../styles/style.css">
+                     <children>
+                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Circle>
+                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Circle>
+                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Circle>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="createNewButton" alignment="CENTER" prefHeight="17.0" prefWidth="103.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="1">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToCreateScene" text="Add" textFill="#2cbf9b" wrapText="true">
                                   <font>
@@ -52,13 +75,19 @@
                            </image>
                         </ImageView>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
                   </HBox>
                         <Label alignment="CENTER" contentDisplay="CENTER" text="Registry List" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
                         </Label>
-                  <HBox fx:id="editButton" alignment="CENTER" GridPane.columnIndex="6">
+                  <HBox fx:id="editButton" alignment="CENTER" prefHeight="17.0" prefWidth="88.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="6">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToUpdateRegistry" text="Edit" textFill="#378cab" wrapText="true">
                                   <font>
@@ -74,8 +103,11 @@
                            </image>
                         </ImageView>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
                   </HBox>
-                  <HBox fx:id="deleteButton" alignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                  <HBox fx:id="deleteButton" alignment="CENTER" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="7" GridPane.halignment="CENTER">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteRegistry" text="Delete" textFill="#b94545" wrapText="true">
                                   <font>
@@ -91,11 +123,11 @@
                            </image>
                         </ImageView>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
                   </HBox>
                     </children>
-                    <padding>
-                        <Insets bottom="10.0" top="10.0" />
-                    </padding>
                 </GridPane>
                 <TableView fx:id="registryTableView" editable="true" fixedCellSize="25.0" onMouseClicked="#rowIsSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
                     <columns>

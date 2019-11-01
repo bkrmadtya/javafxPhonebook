@@ -1,0 +1,14 @@
+#kebabMenu:hover,
+#createNewButton:hover,
+#editButton:hover,
+#deleteButton:hover {
+    -fx-background-color: #ddd;
+}
+
+.button{
+    -fx-background-color: red;
+}
+
+.button:hover {
+    -fx-background-color: #ccc;
+}
