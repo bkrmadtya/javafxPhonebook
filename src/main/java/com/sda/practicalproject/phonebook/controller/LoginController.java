@@ -1,6 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.user.User;
+import com.sda.practicalproject.phonebook.services.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -40,6 +41,7 @@ public class LoginController {
     private void login() {
         User user = QueryDAO.getUserByName(usernameText.getText());
         if (isValidUser(user, usernameText.getText(), passwordText.getText())) {
+            LoggedInUser.setUser(user);
 
             // go to phoneRegistry page with logged in user,
             // so that newly created registry will have creator id too

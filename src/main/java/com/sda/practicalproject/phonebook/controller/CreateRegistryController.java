@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
+import com.sda.practicalproject.phonebook.services.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -31,25 +32,21 @@ public class CreateRegistryController {
     private User creator;
 
     @FXML
+    private void initialize(){
+        this.creator = LoggedInUser.getUser();
+        System.out.println("Creator id : " + creator.getUserId());
+    }
+
+    @FXML
     private void createRegistry() {
         Registry registry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
         registry.setCreatorId(creator.getUserId());
         RegistryDAO.createRegistry(registry);
         goToRegister();
     }
-
-    public void setCreatorId(User user){
-        System.out.println("Setting creator id : " + user.getUsername());
-        this.creator = user;
-    }
-
     @FXML
     private void goToRegister() {
-        Navigate.withParameter(loader -> {
-            PhoneRegistryController phoneRegistryController = loader.getController();
-            phoneRegistryController.setUser(creator);
-            return phoneRegistryController;
-        }, createButton, "/fxml/phonebook_registry.fxml");
+        Navigate.goTo(createButton, "/fxml/register_user.fxml");
     }
 
 }

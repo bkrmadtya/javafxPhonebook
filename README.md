@@ -11,11 +11,14 @@
  
  
  #### Credits
- Phone book button: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
- Add button: <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a><br>
- Edit button: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
- Delete button: <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a><br>
- Warning button: <a href="https://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha">Pixel Buddha</a><br>
+ Phone book icon: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
+ Add icon: <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a><br>
+ Edit icon: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
+ Delete icon: <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a><br>
+ Warning icon: <a href="https://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha">Pixel Buddha</a><br>
+
+Github icon: <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a><br>
+
 
 **@Bikram Karki, 2019**
  

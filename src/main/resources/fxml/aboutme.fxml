@@ -1,11 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.AboutMeController">
    <children>
-      <ImageView fx:id="aboutImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <StackPane prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane hbarPolicy="NEVER">
+               <content>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="400.0" prefWidth="700.0">
+                     <children>
+                        <Text fx:id="aboutMeText" fill="#2f2f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="About Me">
+                           <font>
+                              <Font name="Bookman Old Style" size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView id="aboutImage" fx:id="aboutImage" accessibleRole="CHECK_BOX" fitHeight="136.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/photo.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Text fill="#616161" strokeType="OUTSIDE" strokeWidth="0.0" text="Bikram Karki" textAlignment="CENTER">
+                           <font>
+                              <Font name="Bookman Old Style" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#616161" strokeType="OUTSIDE" strokeWidth="0.0" text="karki.bikram007@gmail.com">
+                           <font>
+                              <Font name="Bookman Old Style" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#616161" strokeType="OUTSIDE" strokeWidth="0.0" text="+358-442354248">
+                           <font>
+                              <Font name="Bookman Old Style" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="aboutMeText1" fill="#2f2f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Connect with Me">
+                           <font>
+                              <Font name="Bookman Old Style" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox accessibleRole="HYPERLINK" alignment="CENTER">
+                           <children>
+                              <Hyperlink>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/socialmedia/linkedin.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                              <Hyperlink>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/socialmedia/github.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                              <Hyperlink>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/socialmedia/linkedin.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fx:id="aboutMeText2" fill="#2f2f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="About the project">
+                           <font>
+                              <Font name="Bookman Old Style" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="30.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This is a &quot;Practical Project&quot; of Software Development Academy 2019 , Class: Java Helsinki 1." />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </StackPane>
+      <Hyperlink fx:id="goBack" onMouseClicked="#goToRegister" text="Go Back" textFill="#757575" translateZ="1.0" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
    </children>
 </AnchorPane>

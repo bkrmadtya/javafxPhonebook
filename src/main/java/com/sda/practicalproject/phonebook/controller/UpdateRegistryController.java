@@ -23,7 +23,7 @@ public class UpdateRegistryController {
     private TextField phoneText;
 
     @FXML
-    private Button createButton;
+    private Button updateButton;
 
     @FXML
     private Hyperlink cancelButton;
@@ -31,6 +31,8 @@ public class UpdateRegistryController {
     private Long id;
 
     private User creator;
+
+
 
     public void fillData(String name, String address, String email, Long phoneNumber, Long id, User creator) {
         this.nameText.setText(name);
@@ -48,20 +50,11 @@ public class UpdateRegistryController {
 
         RegistryDAO.updateRegistry(updatedRegistry, id);
 
-        nameText.setText("");
-        addressText.setText("");
-        emailText.setText("");
-        phoneText.setText("");
-
         goToRegister();
     }
 
     @FXML
     private void goToRegister() {
-        Navigate.withParameter(loader -> {
-            PhoneRegistryController phoneRegistryController = loader.getController();
-            phoneRegistryController.setUser(creator);
-            return phoneRegistryController;
-        }, createButton, "/fxml/phonebook_registry.fxml");
+        Navigate.goTo(updateButton, "/fxml/register_user.fxml");
     }
 }

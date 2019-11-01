@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
+import com.sda.practicalproject.phonebook.services.LoggedInUser;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -57,6 +58,7 @@ public class PhoneRegistryController {
 
     @FXML
     private void initialize() {
+        this.loggedInUser = LoggedInUser.getUser();
         List<Registry> contacts = QueryDAO.getAllRegistry();
         editButton.setVisible(false);
         deleteButton.setVisible(false);
@@ -72,7 +74,7 @@ public class PhoneRegistryController {
     }
 
     public void setUser(User user) {
-        this.loggedInUser = user;
+//        this.loggedInUser = user;
         System.out.println("Logged in user : " + loggedInUser.getUsername());
     }
 
@@ -146,12 +148,13 @@ public class PhoneRegistryController {
 
     @FXML
     private void goToCreateScene() {
-        Navigate.withParameter(loader -> {
-            CreateRegistryController createRegistryController = loader.getController();
-            createRegistryController.setCreatorId(loggedInUser);
-
-            return createRegistryController;
-        }, registryTableView, "/fxml/create_registry.fxml");
+//        Navigate.withParameter(loader -> {
+//            CreateRegistryController createRegistryController = loader.getController();
+//            createRegistryController.setCreatorId(loggedInUser);
+//
+//            return createRegistryController;
+//        }, registryTableView, "/fxml/create_registry.fxml");
+        Navigate.goTo(registryTableView, "/fxml/create_registry.fxml");
     }
 
     @FXML
@@ -161,20 +164,19 @@ public class PhoneRegistryController {
 
     @FXML
     private void logout(){
-        System.out.println("Logging out! EEEEEHAAAA!");
+        LoggedInUser.removeUser();
         Navigate.goTo(registryTableView, "/fxml/login.fxml");
     }
 
     @FXML
     private void exit(){
-        System.out.println("Exitting!");
         Platform.exit();
         System.exit(0);
     }
 
     @FXML
     private void goToAbout(){
-        System.out.println("This is about me!");
+        Navigate.goTo(registryTableView, "/fxml/aboutme.fxml");
     }
 
 }
