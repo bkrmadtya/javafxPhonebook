@@ -1,11 +1,20 @@
-#kebabMenu:hover,
-#createNewButton:hover,
-#editButton:hover,
-#deleteButton:hover {
-    -fx-background-color: #ddd;
+.menu-button > .arrow-button
+{
+    -fx-padding: 0;
+}
+
+.menu-button > .arrow-button > .arrow
+{
+    -fx-background-insets: 0 0 0 0, 0;
+    -fx-padding: 0;
+    -fx-shape: null;
 }
 
 #kebabMenu{
+    -fx-background-color: transparent;
     -fx-border-width: 0 1 0 0;
     -fx-border-color: #aaa;
+    -fx-padding: 0;
 }
+
+

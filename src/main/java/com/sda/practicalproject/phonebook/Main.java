@@ -22,7 +22,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load((getClass().getResource("/fxml/login.fxml")));
         primaryStage.setTitle("Phone Book");
         primaryStage.getIcons().add(new Image("icons/phone-book.png"));
-        primaryStage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }

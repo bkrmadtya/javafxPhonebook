@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.registry.Registry;
 import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +16,7 @@ import java.util.Optional;
 
 public class PhoneRegistryController {
 
+    public MenuButton kebabMenu;
     @FXML
     private HBox createNewButton;
 
@@ -150,6 +152,29 @@ public class PhoneRegistryController {
 
             return createRegistryController;
         }, registryTableView, "/fxml/create_registry.fxml");
+    }
+
+    @FXML
+    private void onMenuClick(){
+        System.out.println("Menu Clicked");
+    }
+
+    @FXML
+    private void logout(){
+        System.out.println("Logging out! EEEEEHAAAA!");
+        Navigate.goTo(registryTableView, "/fxml/login.fxml");
+    }
+
+    @FXML
+    private void exit(){
+        System.out.println("Exitting!");
+        Platform.exit();
+        System.exit(0);
+    }
+
+    @FXML
+    private void goToAbout(){
+        System.out.println("This is about me!");
     }
 
 }

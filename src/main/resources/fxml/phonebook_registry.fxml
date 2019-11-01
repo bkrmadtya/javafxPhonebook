@@ -2,11 +2,15 @@
 
 <!-- fx:controller="fxml.Registry"-->
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,9 +28,9 @@
             <children>
                 <GridPane alignment="CENTER">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="30.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="115.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="135.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="25.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="121.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="120.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="51.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="112.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="49.0" />
@@ -37,31 +41,45 @@
                         <RowConstraints fillHeight="false" valignment="CENTER" vgrow="NEVER" />
                     </rowConstraints>
                     <children>
-                  <VBox fx:id="kebabMenu" alignment="CENTER" prefHeight="43.0" prefWidth="27.0" styleClass=".button" stylesheets="@../styles/style.css">
+                  <MenuButton fx:id="kebabMenu" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#onMenuClick" prefHeight="40.0" prefWidth="14.0" stylesheets="@../styles/style.css">
+                    <items>
+                      <MenuItem fx:id="aboutOption" mnemonicParsing="false" onAction="#goToAbout" text="About" />
+                      <MenuItem fx:id="logoutOption" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                        <MenuItem fx:id="exitOption" mnemonicParsing="false" onAction="#exit" text="Exit" />
+                    </items>
+                     <graphic>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="23.0" styleClass=".button" stylesheets="@../styles/style.css">
+                           <children>
+                              <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Circle>
+                              <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Circle>
+                              <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Circle>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <styleClass>
+                        <String fx:value="arrow" />
+                        <String fx:value="menu-button" />
+                        <String fx:value="arrow-button" />
+                     </styleClass>
+                  </MenuButton>
+                  <HBox fx:id="createNewButton" alignment="CENTER" onMouseClicked="#goToCreateScene" prefHeight="40.0" prefWidth="119.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="1">
                      <children>
-                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </VBox.margin>
-                        </Circle>
-                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </VBox.margin>
-                        </Circle>
-                        <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
-                           <VBox.margin>
-                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                           </VBox.margin>
-                        </Circle>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" top="10.0" />
-                     </padding>
-                  </VBox>
-                  <HBox fx:id="createNewButton" alignment="CENTER" prefHeight="17.0" prefWidth="103.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="1">
-                     <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToCreateScene" text="Add" textFill="#2cbf9b" wrapText="true">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Create" textFill="#2cbf9b" wrapText="true">
                                   <font>
                                       <Font name="System Bold" size="12.0" />
                                   </font>
@@ -87,9 +105,9 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                         </Label>
-                  <HBox fx:id="editButton" alignment="CENTER" prefHeight="17.0" prefWidth="88.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="6">
+                  <HBox fx:id="editButton" alignment="CENTER" prefHeight="46.0" prefWidth="113.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="6">
                      <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToUpdateRegistry" text="Edit" textFill="#378cab" wrapText="true">
+                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToUpdateRegistry" text="Update" textFill="#378cab" wrapText="true">
                                   <font>
                                       <Font name="System Bold" size="12.0" />
                                   </font>
@@ -107,9 +125,9 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="deleteButton" alignment="CENTER" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                  <HBox fx:id="deleteButton" alignment="CENTER" onMouseClicked="#deleteRegistry" prefHeight="53.0" prefWidth="113.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="7" GridPane.halignment="CENTER">
                      <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteRegistry" text="Delete" textFill="#b94545" wrapText="true">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Delete" textFill="#b94545" wrapText="true">
                                   <font>
                                       <Font name="System Bold" size="12.0" />
                                   </font>
