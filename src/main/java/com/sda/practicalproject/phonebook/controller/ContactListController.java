@@ -1,7 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
-import com.sda.practicalproject.phonebook.database.registry.Registry;
-import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
+import com.sda.practicalproject.phonebook.database.contact.Contact;
+import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.services.LoggedInUser;
 import javafx.application.Platform;
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.Optional;
 
-public class PhoneRegistryController {
+public class ContactListController {
 
     public MenuButton kebabMenu;
     @FXML
@@ -40,35 +40,35 @@ public class PhoneRegistryController {
     private TextField phoneText;
 
     @FXML
-    private TableView<Registry> registryTableView;
+    private TableView<Contact> contactListTableView;
 
     @FXML
-    private TableColumn<String, Registry> nameColumn;
+    private TableColumn<String, Contact> nameColumn;
 
     @FXML
-    private TableColumn<String, Registry> phoneColumn;
+    private TableColumn<String, Contact> phoneColumn;
 
     @FXML
-    private TableColumn<String, Registry> addressColumn;
+    private TableColumn<String, Contact> addressColumn;
 
     @FXML
-    private TableColumn<Long, Registry> emailColumn;
+    private TableColumn<Long, Contact> emailColumn;
 
     private User loggedInUser;
 
     @FXML
     private void initialize() {
         this.loggedInUser = LoggedInUser.getUser();
-        List<Registry> contacts = QueryDAO.getAllRegistry();
+        List<Contact> contacts = QueryDAO.getAllContacts();
         editButton.setVisible(false);
         deleteButton.setVisible(false);
 
-        registryTableView.getItems().clear();
+        contactListTableView.getItems().clear();
 
         setColumnValues();
 
         contacts.forEach(contact -> {
-            registryTableView.getItems().add(contact);
+            contactListTableView.getItems().add(contact);
         });
 
     }
@@ -90,7 +90,7 @@ public class PhoneRegistryController {
     private void rowIsSelected() {
         Long id = null;
         try {
-            id = (Long) registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
+            id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
 
             if (id != null) {
                 editButton.setVisible(true);
@@ -103,7 +103,7 @@ public class PhoneRegistryController {
 
     @FXML
     private void deleteRegistry() {
-        Long id = (Long) registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
+        Long id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete registry?");
@@ -124,37 +124,31 @@ public class PhoneRegistryController {
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == ButtonType.YES) {
-            RegistryDAO.deleteRegistry(id);
+            ContactDAO.deleteContact(id);
             System.out.println(id);
         }
         this.initialize();
     }
 
     @FXML
-    private void goToUpdateRegistry() {
-        String name = registryTableView.getSelectionModel().getSelectedItem().getPersonName();
-        String address = registryTableView.getSelectionModel().getSelectedItem().getAddress();
-        String email = registryTableView.getSelectionModel().getSelectedItem().getEmail();
-        Long phoneNumber = registryTableView.getSelectionModel().getSelectedItem().getPhoneNumber();
-        Long id = registryTableView.getSelectionModel().getSelectedItem().getRegistryId();
+    private void goToUpdateContact() {
+        String name = contactListTableView.getSelectionModel().getSelectedItem().getPersonName();
+        String address = contactListTableView.getSelectionModel().getSelectedItem().getAddress();
+        String email = contactListTableView.getSelectionModel().getSelectedItem().getEmail();
+        Long phoneNumber = contactListTableView.getSelectionModel().getSelectedItem().getPhoneNumber();
+        Long id = contactListTableView.getSelectionModel().getSelectedItem().getContactId();
 
         Navigate.withParameter(loader -> {
-            UpdateRegistryController updateRegistryController = loader.getController();
-            updateRegistryController.fillData(name, address, email, phoneNumber, id, loggedInUser);
+            UpdateContactController updateContactController = loader.getController();
+            updateContactController.fillData(name, address, email, phoneNumber, id, loggedInUser);
 
-            return updateRegistryController;
-        }, registryTableView, "/fxml/update_registry.fxml");
+            return updateContactController;
+        }, contactListTableView, "/fxml/update_contact.fxml");
     }
 
     @FXML
     private void goToCreateScene() {
-//        Navigate.withParameter(loader -> {
-//            CreateRegistryController createRegistryController = loader.getController();
-//            createRegistryController.setCreatorId(loggedInUser);
-//
-//            return createRegistryController;
-//        }, registryTableView, "/fxml/create_registry.fxml");
-        Navigate.goTo(registryTableView, "/fxml/create_registry.fxml");
+        Navigate.goTo(contactListTableView, "/fxml/create_contact.fxml");
     }
 
     @FXML
@@ -165,7 +159,7 @@ public class PhoneRegistryController {
     @FXML
     private void logout(){
         LoggedInUser.removeUser();
-        Navigate.goTo(registryTableView, "/fxml/login.fxml");
+        Navigate.goTo(contactListTableView, "/fxml/login.fxml");
     }
 
     @FXML
@@ -176,7 +170,7 @@ public class PhoneRegistryController {
 
     @FXML
     private void goToAbout(){
-        Navigate.goTo(registryTableView, "/fxml/aboutme.fxml");
+        Navigate.goTo(contactListTableView, "/fxml/aboutme.fxml");
     }
 
 }

@@ -1,6 +1,6 @@
 package com.sda.practicalproject.phonebook.controller;
 
-import com.sda.practicalproject.phonebook.database.registry.Registry;
+import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
 import org.hibernate.Session;
@@ -48,12 +48,12 @@ public class QueryDAO {
         return result;
     }
 
-    public static List<Registry> getAllRegistry() {
+    public static List<Contact> getAllContacts() {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("from Registry");
-        List<Registry> list = query.list();
+        Query query = session.createQuery("from Contact");
+        List<Contact> list = query.list();
 
         session.close();
 

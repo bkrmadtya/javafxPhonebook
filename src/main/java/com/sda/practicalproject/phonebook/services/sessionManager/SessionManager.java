@@ -1,6 +1,6 @@
 package com.sda.practicalproject.phonebook.services.sessionManager;
 
-import com.sda.practicalproject.phonebook.database.registry.Registry;
+import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -25,12 +25,12 @@ public class SessionManager {
                 settings.put(Environment.PASS, "admin");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                settings.put(Environment.HBM2DDL_AUTO, "update"); // create-drop ?
+                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(User.class);
-                configuration.addAnnotatedClass(Registry.class);
+                configuration.addAnnotatedClass(Contact.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties())

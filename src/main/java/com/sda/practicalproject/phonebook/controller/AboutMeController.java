@@ -14,7 +14,7 @@ public class AboutMeController {
 
     @FXML
     private  void goToRegister(){
-        Navigate.goTo(aboutImage, "/fxml/phonebook_registry.fxml");
+        Navigate.goTo(aboutImage, "/fxml/contact_list.fxml");
     }
 
 }

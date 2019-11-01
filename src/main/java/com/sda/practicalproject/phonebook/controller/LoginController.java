@@ -46,10 +46,10 @@ public class LoginController {
             // go to phoneRegistry page with logged in user,
             // so that newly created registry will have creator id too
             Navigate.withParameter(loader -> {
-                PhoneRegistryController phoneRegistryController = loader.getController();
-                phoneRegistryController.setUser(user);
-                return phoneRegistryController;
-            }, loginButton, "/fxml/phonebook_registry.fxml");
+                ContactListController contactListController = loader.getController();
+                contactListController.setUser(user);
+                return contactListController;
+            }, loginButton, "/fxml/contact_list.fxml");
 
         } else {
             errorText.setText("Invalid Username or Password!");

@@ -1,7 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
-import com.sda.practicalproject.phonebook.database.registry.Registry;
-import com.sda.practicalproject.phonebook.database.registry.RegistryDAO;
+import com.sda.practicalproject.phonebook.database.contact.Contact;
+import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.services.LoggedInUser;
 import javafx.fxml.FXML;
@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 
-public class CreateRegistryController {
+public class CreateContactController {
 
     @FXML
     private TextField nameText;
@@ -39,14 +39,14 @@ public class CreateRegistryController {
 
     @FXML
     private void createRegistry() {
-        Registry registry = new Registry(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
-        registry.setCreatorId(creator.getUserId());
-        RegistryDAO.createRegistry(registry);
-        goToRegister();
+        Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
+        contact.setCreatorId(creator.getUserId());
+        ContactDAO.createContact(contact);
+        goToContactList();
     }
     @FXML
-    private void goToRegister() {
-        Navigate.goTo(createButton, "/fxml/register_user.fxml");
+    private void goToContactList() {
+        Navigate.goTo(createButton, "/fxml/contact_list.fxml");
     }
 
 }

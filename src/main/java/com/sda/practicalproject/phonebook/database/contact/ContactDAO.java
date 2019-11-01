@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.database.registry;
+package com.sda.practicalproject.phonebook.database.contact;
 
 import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
 import org.hibernate.Session;
@@ -7,44 +7,44 @@ import org.hibernate.query.Query;
 
 import java.util.function.Function;
 
-public class RegistryDAO {
+public class ContactDAO {
 
-    public static void createRegistry(Registry registry) {
+    public static void createContact(Contact contact) {
         query(session -> {
-            session.save(registry);
-            return registry;
+            session.save(contact);
+            return contact;
         });
     }
 
 
-    public static void deleteRegistry(Long id) {
+    public static void deleteContact(Long id) {
         query(session -> {
-            Registry registry = session.find(Registry.class, id);
-            session.delete(registry);
-            return registry;
+            Contact contact = session.find(Contact.class, id);
+            session.delete(contact);
+            return contact;
         });
     }
 
 
-    public static void updateRegistry(Registry updatedRegistry, Long id) {
+    public static void updateContact(Contact updatedContact, Long id) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
 
-            String hql = "UPDATE Registry SET " +
+            String hql = "UPDATE Contact SET " +
                     "personName=:personName, " +
                     "phoneNumber=:phoneNumber, " +
                     "email=:email, " +
                     "address=:address " +
-                    "where registryId=:registryId";
+                    "where contactId=:contactId";
 
             Query query = session.createQuery(hql);
-            query.setParameter("personName", updatedRegistry.getPersonName())
-                    .setParameter("phoneNumber", updatedRegistry.getPhoneNumber())
-                    .setParameter("email", updatedRegistry.getEmail())
-                    .setParameter("address", updatedRegistry.getAddress())
-                    .setParameter("registryId", id);
+            query.setParameter("personName", updatedContact.getPersonName())
+                    .setParameter("phoneNumber", updatedContact.getPhoneNumber())
+                    .setParameter("email", updatedContact.getEmail())
+                    .setParameter("address", updatedContact.getAddress())
+                    .setParameter("contactId", id);
 
             int rows = query.executeUpdate();
 
@@ -59,19 +59,19 @@ public class RegistryDAO {
     }
 
 
-    private static Registry getRegistry(Long id) {
+    private static Contact getContact(Long id) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("from Registry where registryId=:id");
+        Query query = session.createQuery("from Contact where contactId=:id");
         query.setParameter("id", id);
 
-        Registry registry = (Registry) query.uniqueResult();
+        Contact contact = (Contact) query.uniqueResult();
         session.close();
-        return registry;
+        return contact;
     }
 
-    private static void query(Function<Session, Registry> function) {
+    private static void query(Function<Session, Contact> function) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
 

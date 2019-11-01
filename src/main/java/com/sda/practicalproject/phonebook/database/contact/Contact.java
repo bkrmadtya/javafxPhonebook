@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.database.registry;
+package com.sda.practicalproject.phonebook.database.contact;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,16 +7,16 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "registry")
+@Table(name = "contact")
 @Getter
 @Setter
 @NoArgsConstructor
-@EntityListeners(RegistryListener.class)
-public class Registry {
+@EntityListeners(ContactListener.class)
+public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long registryId;
+    private Long contactId;
 
     @Column
     private String personName;
@@ -33,7 +33,7 @@ public class Registry {
     @Column
     private Long creatorId;
 
-    public Registry(String name, String address, String email, long phoneNumber) {
+    public Contact(String name, String address, String email, long phoneNumber) {
         this.personName = name;
         this.address = address;
         this.email = email;
