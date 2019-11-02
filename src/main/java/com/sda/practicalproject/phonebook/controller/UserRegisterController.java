@@ -20,7 +20,7 @@ public class UserRegisterController {
     private TextField passwordText2;
 
     @FXML
-    private Button registerUser;
+    private Button registerButton;
 
     @FXML
     private Label errorText;
@@ -52,7 +52,7 @@ public class UserRegisterController {
 
     @FXML
     private void goToLogin() {
-        Navigate.goTo(registerUser, "/fxml/login.fxml");
+        Navigate.goTo(registerButton, "/fxml/login.fxml");
     }
 
 }
