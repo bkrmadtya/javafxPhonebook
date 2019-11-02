@@ -165,7 +165,7 @@
                   </HBox>
                     </children>
                 </GridPane>
-                <TableView fx:id="contactListTableView" cache="true" fixedCellSize="35.0" onMouseClicked="#rowIsSelected" stylesheets="@../styles/style.css">
+                <TableView fx:id="contactListTableView" cache="true" fixedCellSize="30.0" onMouseClicked="#rowIsSelected" stylesheets="@../styles/style.css">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="168.0" text="Name" />
                         <TableColumn fx:id="phoneColumn" prefWidth="174.0" text="Phone" />

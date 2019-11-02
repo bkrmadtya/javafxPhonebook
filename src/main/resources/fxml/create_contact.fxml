@@ -1,75 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="700.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            fx:controller="com.sda.practicalproject.phonebook.controller.CreateContactController">
-    <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0"
-          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-          AnchorPane.topAnchor="0.0">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.CreateContactController">
+    <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <children>
             <Label text="Create New Registry">
                 <VBox.margin>
-                    <Insets top="20.0"/>
+                    <Insets top="20.0" />
                 </VBox.margin>
                 <font>
-                    <Font name="System Bold" size="18.0"/>
+                    <Font size="24.0" />
                 </font>
             </Label>
-            <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0"
-                       promptText="name">
+            <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="name">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0"/>
+                    <Insets left="20.0" right="20.0" top="20.0" />
                 </VBox.margin>
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
             </TextField>
-            <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0"
-                       prefWidth="350.0" promptText="address">
+            <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="address">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0"/>
+                    <Insets left="20.0" right="20.0" top="20.0" />
                 </VBox.margin>
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
             </TextField>
-            <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0"
-                       promptText="email">
+            <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="email">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0"/>
+                    <Insets left="20.0" right="20.0" top="20.0" />
                 </VBox.margin>
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
             </TextField>
-            <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0"
-                       promptText="phone">
+            <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="phone">
                 <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0"/>
+                    <Insets left="20.0" right="20.0" top="20.0" />
                 </VBox.margin>
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
             </TextField>
-            <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createRegistry" prefHeight="35.0"
-                    prefWidth="90.0" text="Create">
+            <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createRegistry" prefHeight="35.0" prefWidth="90.0" text="Create">
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
                 <VBox.margin>
-                    <Insets left="50.0" right="50.0" top="20.0"/>
+                    <Insets left="50.0" right="50.0" top="20.0" />
                 </VBox.margin>
                 <padding>
-                    <Insets left="20.0" right="20.0"/>
+                    <Insets left="20.0" right="20.0" />
                 </padding>
             </Button>
             <Hyperlink fx:id="cancelButton" onAction="#goToContactList" text="Cancel">
                 <VBox.margin>
-                    <Insets top="10.0"/>
+                    <Insets top="10.0" />
                 </VBox.margin>
             </Hyperlink>
         </children>

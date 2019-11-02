@@ -20,6 +20,13 @@
     -fx-background-color: #1f72bf;
 }
 
+#createButton {
+    -fx-background-color: #82c458;
+}
+
+.hyperlink {
+    -fx-text-fill: #757575;
+}
 
 
 /* For the custom menu button*/
@@ -59,11 +66,11 @@
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 400;
-    -fx-padding: 10px 0 10px 0;
+    -fx-padding: 7px 0 7px 0;
  }
 
 .table-cell{
-    -fx-text-fill: black;
+    -fx-text-fill: #444;
     -fx-cell-size: 70px;
  }
 
@@ -75,14 +82,13 @@
 .table-row-cell:selected {
     -fx-background-color: #ddd;
     -fx-table-cell-border-color: #ddd;
-    -fx-text-fill: black;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
 
 .menu-item {
-    -fx-padding: 0 10px 0 10px;
-    -fx-font-size: 13px;
+    -fx-padding: 5 15 5 15;
+    -fx-font-size: 15px;
 }
 
 .menu-item:focused, .menu-item: hover {
