@@ -48,7 +48,7 @@
                         <MenuItem fx:id="exitOption" mnemonicParsing="false" onAction="#exit" text="Exit" />
                     </items>
                      <graphic>
-                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="23.0" styleClass=".button" stylesheets="@../styles/style.css">
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="23.0" stylesheets="@../styles/style.css">
                            <children>
                               <Circle radius="1.0" stroke="BLACK" strokeType="INSIDE">
                                  <VBox.margin>
@@ -76,16 +76,22 @@
                         <String fx:value="menu-button" />
                         <String fx:value="arrow-button" />
                      </styleClass>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
                   </MenuButton>
                   <HBox fx:id="createNewButton" alignment="CENTER" onMouseClicked="#goToCreateContact" prefHeight="40.0" prefWidth="119.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="1">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Create" textFill="#2cbf9b" wrapText="true">
-                                  <font>
-                                      <Font name="System Bold" size="12.0" />
-                                  </font>
                            <padding>
                               <Insets right="5.0" />
                            </padding>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
                               </Label>
                         <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -96,24 +102,30 @@
                      <padding>
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </HBox>
                         <Label alignment="CENTER" contentDisplay="CENTER" text="Contact List" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
                             <font>
-                                <Font name="System Bold" size="14.0" />
+                                <Font size="18.0" />
                             </font>
                             <padding>
                                 <Insets bottom="10.0" top="10.0" />
                             </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                         </Label>
                   <HBox fx:id="editButton" alignment="CENTER" onMouseClicked="#goToUpdateContact" prefHeight="46.0" prefWidth="113.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="6">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Update" textFill="#378cab" wrapText="true">
-                                  <font>
-                                      <Font name="System Bold" size="12.0" />
-                                  </font>
                            <padding>
                               <Insets right="5.0" />
                            </padding>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
                               </Label>
                         <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,16 +136,19 @@
                      <padding>
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </HBox>
                   <HBox fx:id="deleteButton" alignment="CENTER" onMouseClicked="#deleteContact" prefHeight="53.0" prefWidth="113.0" styleClass=".button" stylesheets="@../styles/style.css" GridPane.columnIndex="7">
                      <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Delete" textFill="#b94545" wrapText="true">
-                                  <font>
-                                      <Font name="System Bold" size="12.0" />
-                                  </font>
                            <padding>
                               <Insets right="5.0" />
                            </padding>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
                               </Label>
                         <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -144,28 +159,31 @@
                      <padding>
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </HBox>
                     </children>
                 </GridPane>
-                <TableView fx:id="contactListTableView" editable="true" fixedCellSize="25.0" onMouseClicked="#rowIsSelected" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                <TableView fx:id="contactListTableView" cache="true" fixedCellSize="35.0" onMouseClicked="#rowIsSelected" stylesheets="@../styles/style.css">
                     <columns>
-                        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
-                        <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
+                        <TableColumn fx:id="nameColumn" prefWidth="168.0" text="Name" />
+                        <TableColumn fx:id="phoneColumn" prefWidth="174.0" text="Phone" />
                         <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Address" />
                         <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
                     </columns>
-                    <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                    </columnResizePolicy>
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
-                    <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                    </cursor>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
                 </TableView>
             </children>
         </VBox>

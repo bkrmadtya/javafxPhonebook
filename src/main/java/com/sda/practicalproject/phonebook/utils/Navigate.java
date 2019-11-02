@@ -14,8 +14,7 @@ public class Navigate {
     public static void goTo(Node node, String path) {
         try {
             Parent root = FXMLLoader.load((Navigate.class.getResource(path)));
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            setUpScene(node, root);
 
         } catch (IOException io) {
             io.printStackTrace();
@@ -31,13 +30,21 @@ public class Navigate {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         parameter.apply(loader);
 
         Parent root = loader.getRoot();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.setScene(new Scene(root));
 
+        setUpScene(node, root);
+
+    }
+
+    private static void setUpScene(Node node, Parent root){
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/styles/style.css");
+        stage.setScene(scene);
 
     }
 }
+
+

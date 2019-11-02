@@ -59,10 +59,10 @@ public class ContactListController {
 
     @FXML
     private void initialize() {
+        disableEditDeleteButtons();
+
         this.loggedInUser = LoggedInUser.getUser();
         List<Contact> contacts = QueryDAO.getAllContacts();
-        editButton.setVisible(false);
-        deleteButton.setVisible(false);
 
         contactListTableView.getItems().clear();
 
@@ -72,10 +72,10 @@ public class ContactListController {
             contactListTableView.getItems().add(contact);
         });
 
+
     }
 
     public void setUser(User user) {
-//        this.loggedInUser = user;
         System.out.println("Logged in user : " + loggedInUser.getUsername());
     }
 
@@ -92,11 +92,16 @@ public class ContactListController {
         Long id = null;
         try {
             id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
+            Long creatorId = contactListTableView.getSelectionModel().getSelectedItem().getCreatorId();
 
-            if (id != null) {
-                editButton.setVisible(true);
-                deleteButton.setVisible(true);
+            boolean isCreator = creatorId.equals(loggedInUser.getUserId());
+
+            if (id != null && isCreator) {
+                enableEditDeleteButtons();
+            } else {
+                disableEditDeleteButtons();
             }
+
         } catch (Exception e) {
             System.out.println("Empty row selected");
         }
@@ -172,6 +177,16 @@ public class ContactListController {
     @FXML
     private void goToAbout(){
         Navigate.goTo(contactListTableView, "/fxml/aboutme.fxml");
+    }
+
+    private void enableEditDeleteButtons(){
+        editButton.setVisible(true);
+        deleteButton.setVisible(true);
+    }
+
+    private void disableEditDeleteButtons(){
+        editButton.setVisible(false);
+        deleteButton.setVisible(false);
     }
 
 }

@@ -1,10 +1,3 @@
-.root {
-    -fx-background-color: red;
-}
-
-
-
-
 
 .menu-button > .arrow-button
 {
@@ -22,7 +15,6 @@
     -fx-background-color: transparent;
     -fx-border-width: 0 1 0 0;
     -fx-border-color: #aaa;
-    -fx-padding: 0;
 }
 
 #aboutImage{
@@ -30,14 +22,52 @@
     -fx-background-radius: 25;
 }
 
-#aboutMeText{
-    -fx-background-color: red;
-    -fx-text-color: red;
+.table-view {
+    -fx-background-color: transparent;
 }
 
-.table-view .column-header-background
-.table-view .column-header,
-.table-view .column-header .filler,
-.table-view .column-header-background .filler {
-    -fx-background-color: red;
+.table-view:focused {
+    -fx-background-color: transparent;
+}
+
+
+.table-view .column-header{
+    -fx-background-color: #666;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+    -fx-padding: 10px 0 10px 0;
+ }
+
+.table-cell{
+    -fx-text-fill: black;
+    -fx-cell-size: 70px;
+ }
+
+.table-cell{
+    -fx-padding: 0 0 0 10;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #ddd;
+    -fx-table-cell-border-color: #ddd;
+    -fx-text-fill: black;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.menu-item {
+    -fx-padding: 0 10px 0 10px;
+    -fx-font-size: 13px;
+}
+
+.menu-item:focused, .menu-item: hover {
+    -fx-background-color: #ddd;
+    -fx-text-fill: black;
+    -fx-text-inner-color: black;
 }
