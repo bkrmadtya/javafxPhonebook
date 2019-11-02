@@ -17,6 +17,9 @@ public class UserRegisterController {
     private TextField passwordText;
 
     @FXML
+    private TextField passwordText2;
+
+    @FXML
     private Button registerUser;
 
     @FXML
@@ -33,10 +36,14 @@ public class UserRegisterController {
 
     private void createUser(){
         if (QueryDAO.usernameIsUnique(usernameText.getText())) {
-            User user = new User(usernameText.getText(), passwordText.getText());
-            UserDAO.createUser(user);
+            if(passwordText.getText().equals(passwordText2.getText())){
+                User user = new User(usernameText.getText(), passwordText.getText());
+                UserDAO.createUser(user);
 
-            goToLogin();
+                goToLogin();
+            } else{
+                errorText.setText("Password mismatched!");
+            }
         } else {
             errorText.setText("Username already taken!");
         }
