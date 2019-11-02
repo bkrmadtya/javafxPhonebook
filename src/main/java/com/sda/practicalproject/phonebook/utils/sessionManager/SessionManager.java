@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.services.sessionManager;
+package com.sda.practicalproject.phonebook.utils.sessionManager;
 
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;

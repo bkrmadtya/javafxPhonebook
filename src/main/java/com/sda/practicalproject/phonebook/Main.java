@@ -1,7 +1,7 @@
 package com.sda.practicalproject.phonebook;
 
 
-import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
+import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,7 +23,7 @@ public class Main extends Application {
         primaryStage.setTitle("Phone Book");
         primaryStage.getIcons().add(new Image("icons/phone-book.png"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        scene.getStylesheets().add(("/styles/style.css"));
         primaryStage.setScene(scene);
         primaryStage.show();
     }

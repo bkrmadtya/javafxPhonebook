@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.controller;
+package com.sda.practicalproject.phonebook.utils;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

@@ -3,7 +3,8 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
-import com.sda.practicalproject.phonebook.services.LoggedInUser;
+import com.sda.practicalproject.phonebook.utils.LoggedInUser;
+import com.sda.practicalproject.phonebook.utils.Navigate;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -102,7 +103,7 @@ public class ContactListController {
     }
 
     @FXML
-    private void deleteRegistry() {
+    private void deleteContact() {
         Long id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -147,7 +148,7 @@ public class ContactListController {
     }
 
     @FXML
-    private void goToCreateScene() {
+    private void goToCreateContact() {
         Navigate.goTo(contactListTableView, "/fxml/create_contact.fxml");
     }
 

@@ -2,7 +2,7 @@ package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;
-import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
+import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 

@@ -2,6 +2,7 @@ package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.database.user.UserDAO;
+import com.sda.practicalproject.phonebook.utils.Navigate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

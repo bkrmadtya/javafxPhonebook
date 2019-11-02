@@ -1,3 +1,11 @@
+.root {
+    -fx-background-color: red;
+}
+
+
+
+
+
 .menu-button > .arrow-button
 {
     -fx-padding: 0;
@@ -25,4 +33,11 @@
 #aboutMeText{
     -fx-background-color: red;
     -fx-text-color: red;
+}
+
+.table-view .column-header-background
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: red;
 }

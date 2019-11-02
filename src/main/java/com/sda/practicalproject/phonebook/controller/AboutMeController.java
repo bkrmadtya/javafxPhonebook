@@ -1,5 +1,6 @@
 package com.sda.practicalproject.phonebook.controller;
 
+import com.sda.practicalproject.phonebook.utils.Navigate;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;

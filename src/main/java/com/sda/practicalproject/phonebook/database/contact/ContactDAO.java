@@ -1,6 +1,6 @@
 package com.sda.practicalproject.phonebook.database.contact;
 
-import com.sda.practicalproject.phonebook.services.sessionManager.SessionManager;
+import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

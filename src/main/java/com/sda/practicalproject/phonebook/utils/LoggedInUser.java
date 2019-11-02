@@ -1,8 +1,6 @@
-package com.sda.practicalproject.phonebook.services;
+package com.sda.practicalproject.phonebook.utils;
 
 import com.sda.practicalproject.phonebook.database.user.User;
-import lombok.Getter;
-import lombok.Setter;
 
 public class LoggedInUser {
     private static User user;
