@@ -3,7 +3,6 @@
 .text-field {
     -fx-text-box-border: #aaa;
     -fx-background-color: -fx-text-box-border, -fx-background;
-    -fx-background-insets: 0, 0 0 1 0 ;
 }
 .text-field:focused {
     -fx-focus-color: #555;

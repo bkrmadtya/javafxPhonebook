@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.database.user.UserDAO;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -27,10 +28,10 @@ public class UserRegisterController {
 
     @FXML
     private void handleUserRegister() {
-        if(usernameText.getText().isEmpty() || passwordText.getText().isEmpty()){
-            errorText.setText("The fields cannot be empty");
-        } else{
+        if(ValidateInput.isNotEmpty(usernameText, passwordText, passwordText2)){
             createUser();
+        } else{
+            errorText.setText("The fields cannot be empty");
         }
     }
 

@@ -70,7 +70,7 @@
                         </Text>
                         <HBox accessibleRole="HYPERLINK" alignment="CENTER">
                            <children>
-                              <Hyperlink>
+                              <Hyperlink fx:id="linkedinLink">
                                  <graphic>
                                     <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -82,7 +82,7 @@
                                     <Insets left="10.0" right="10.0" />
                                  </HBox.margin>
                               </Hyperlink>
-                              <Hyperlink>
+                              <Hyperlink fx:id="githubLink">
                                  <graphic>
                                     <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -94,11 +94,11 @@
                                     <Insets left="10.0" right="10.0" />
                                  </HBox.margin>
                               </Hyperlink>
-                              <Hyperlink>
+                              <Hyperlink fx:id="facebookLink">
                                  <graphic>
                                     <ImageView fitHeight="50.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../icons/socialmedia/linkedin.png" />
+                                          <Image url="@../icons/socialmedia/facebook.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -111,7 +111,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </HBox>
-                        <Text fx:id="aboutMeText2" fill="#2f2f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="About the project">
+                        <Text fx:id="aboutProject" fill="#2f2f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="About the project">
                            <font>
                               <Font name="Bookman Old Style" size="18.0" />
                            </font>

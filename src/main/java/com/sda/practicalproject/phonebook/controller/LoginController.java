@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.LoggedInUser;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -32,10 +33,10 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        if (usernameText.getText().isEmpty() || passwordText.getText().isEmpty()) {
-            errorText.setText("Missing credentials!");
-        } else {
+        if(ValidateInput.isNotEmpty(usernameText, passwordText)){
             login();
+        } else {
+            errorText.setText("The fields cannot be empty!");
         }
     }
 

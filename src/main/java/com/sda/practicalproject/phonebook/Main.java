@@ -2,6 +2,7 @@ package com.sda.practicalproject.phonebook;
 
 
 import com.sda.practicalproject.phonebook.controller.MyPreloader;
+import com.sda.practicalproject.phonebook.utils.Navigate;
 import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
@@ -17,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception{
-        int countLimit = 500000;
+        int countLimit = 50000;
         for(int i = 0; i < countLimit; i++){
             int progress = (100 * i)/countLimit;
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
@@ -41,4 +42,9 @@ public class Main extends Application {
         Session session = SessionManager.getSessionFactory().openSession();
         LauncherImpl.launchApplication(Main.class, MyPreloader.class, args);
     }
+//
+//    public static void setURL(){
+//        FXMLLoader fxmlLoader = new FXMLLoader();
+//        fxmlLoader.getClass().
+//    }
 }

@@ -33,8 +33,6 @@ public class UpdateContactController {
 
     private User creator;
 
-
-
     public void fillData(String name, String address, String email, Long phoneNumber, Long id, User creator) {
         this.nameText.setText(name);
         this.addressText.setText(address);
