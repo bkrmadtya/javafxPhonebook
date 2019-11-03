@@ -2,7 +2,7 @@ package com.sda.practicalproject.phonebook;
 
 
 import com.sda.practicalproject.phonebook.controller.MyPreloader;
-import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.Utils;
 import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
@@ -30,6 +30,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load((getClass().getResource("/fxml/login.fxml")));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(("/styles/style.css"));
+
+        // setting HostService for the Hyperlinks in the About me page
+        Utils.setHostServices(getHostServices());
 
         primaryStage.setTitle("Phone Book");
         primaryStage.getIcons().add(new Image("icons/phone-book.png"));
