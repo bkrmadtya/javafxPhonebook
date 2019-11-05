@@ -20,12 +20,12 @@ public class SessionManager {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.hsqldb.jdbcDriver");
-                settings.put(Environment.URL, "jdbc:hsqldb:mem:phonebook");
+                settings.put(Environment.URL, "jdbc:hsqldb:file:phonebook-files/phonebook;shutdown=true;hsqldb.lock_file=false");
                 settings.put(Environment.USER, "sa");
                 settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.HSQLDialect");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 

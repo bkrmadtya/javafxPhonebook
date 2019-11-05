@@ -1,3 +1,7 @@
 .idea
 /target
 /out
+phonebook.lck
+phonebook.log
+phonebook.properties
+phonebook.script
