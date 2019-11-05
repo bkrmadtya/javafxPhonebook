@@ -10,7 +10,7 @@ import java.util.List;
 
 public class QueryDAO {
 
-
+    @SuppressWarnings({"unchecked", "unsafe"})
     public static User getUserByName(String username) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
@@ -23,6 +23,7 @@ public class QueryDAO {
         return user;
     }
 
+    @SuppressWarnings({"unchecked", "unsafe"})
     public static List<User> getAllUser() {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
@@ -48,6 +49,7 @@ public class QueryDAO {
         return result;
     }
 
+    @SuppressWarnings({"unchecked", "unsafe"})
     public static List<Contact> getAllContacts() {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
