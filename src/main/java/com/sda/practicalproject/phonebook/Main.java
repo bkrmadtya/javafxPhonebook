@@ -6,6 +6,7 @@ import com.sda.practicalproject.phonebook.utils.Utils;
 import com.sda.practicalproject.phonebook.utils.sessionManager.SessionManager;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,10 +18,10 @@ import org.hibernate.Session;
 public class Main extends Application {
 
     @Override
-    public void init() throws Exception{
+    public void init() throws Exception {
         int countLimit = 50000;
-        for(int i = 0; i < countLimit; i++){
-            int progress = (100 * i)/countLimit;
+        for (int i = 0; i < countLimit; i++) {
+            int progress = (100 * i) / countLimit;
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
         }
     }
@@ -45,9 +46,10 @@ public class Main extends Application {
         Session session = SessionManager.getSessionFactory().openSession();
         LauncherImpl.launchApplication(Main.class, MyPreloader.class, args);
     }
-//
-//    public static void setURL(){
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.getClass().
-//    }
+
+    @Override
+    public void stop() {
+        Platform.exit();
+        System.exit(0);
+    }
 }
