@@ -46,13 +46,10 @@ public class Main extends Application {
         Session session = SessionManager.getSessionFactory().openSession();
         LauncherImpl.launchApplication(Main.class, MyPreloader.class, args);
     }
-<<<<<<< HEAD
-=======
 
     @Override
     public void stop() {
         Platform.exit();
         System.exit(0);
     }
->>>>>>> 6654fecdb7eee622455a772a8bd30ce79d29693b
 }
