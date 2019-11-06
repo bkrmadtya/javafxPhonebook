@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 import java.util.function.Function;
 
 public class UserDAO {
-    private static Session session = SessionManager.getSessionFactory().getCurrentSession();
 
     public static void createUser(User user) {
         query(session -> {
@@ -17,6 +16,7 @@ public class UserDAO {
     }
 
     private static void query(Function<Session, User> function) {
+        Session session = SessionManager.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
 
         try {
