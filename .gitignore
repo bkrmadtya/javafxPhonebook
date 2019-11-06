@@ -5,3 +5,5 @@ phonebook.lck
 phonebook.log
 phonebook.properties
 phonebook.script
+/phonebook-files
+/phonebook.tmp
