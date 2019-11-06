@@ -23,18 +23,18 @@ public class QueryDAO {
         return user;
     }
 
-    public static List<User> getAllUser() {
-        Session session = SessionManager.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-
-        Query query = session.createQuery("from User");
-
-        List<User> list = query.list();
-
-        session.close();
-
-        return query.list();
-    }
+//    public static List getAllUser() {
+//        Session session = SessionManager.getSessionFactory().getCurrentSession();
+//        session.beginTransaction();
+//
+//        Query query = session.createQuery("from User");
+//
+//        List list = query.list();
+//
+//        session.close();
+//
+//        return list;
+//    }
 
     public static boolean usernameIsUnique(String username) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
@@ -48,6 +48,7 @@ public class QueryDAO {
         return result;
     }
 
+    @SuppressWarnings({"unchecked", "unsafe"})
     public static List<Contact> getAllContacts() {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();

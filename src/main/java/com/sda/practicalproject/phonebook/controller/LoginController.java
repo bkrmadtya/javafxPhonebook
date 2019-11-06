@@ -33,7 +33,7 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        if(ValidateInput.isNotEmpty(usernameText, passwordText)){
+        if (ValidateInput.isNotEmpty(usernameText, passwordText)) {
             login();
         } else {
             errorText.setText("The fields cannot be empty!");
