@@ -58,7 +58,6 @@ public class ContactDAO {
         session.close();
     }
 
-
     private static Contact getContact(Long id) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();

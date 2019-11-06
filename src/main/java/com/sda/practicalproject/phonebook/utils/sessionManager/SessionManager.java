@@ -19,11 +19,11 @@ public class SessionManager {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
 
-                settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/phonebook");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "admin");
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+                settings.put(Environment.DRIVER, "org.hsqldb.jdbcDriver");
+                settings.put(Environment.URL, "jdbc:hsqldb:file:phonebook-files/phonebook;shutdown=true;hsqldb.lock_file=false");
+                settings.put(Environment.USER, "sa");
+                settings.put(Environment.PASS, "");
+                settings.put(Environment.DIALECT, "org.hibernate.dialect.HSQLDialect");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
 
