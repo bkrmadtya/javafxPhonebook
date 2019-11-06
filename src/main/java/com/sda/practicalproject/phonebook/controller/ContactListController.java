@@ -158,33 +158,33 @@ public class ContactListController {
     }
 
     @FXML
-    private void onMenuClick(){
+    private void onMenuClick() {
         System.out.println("Menu Clicked");
     }
 
     @FXML
-    private void logout(){
+    private void logout() {
         LoggedInUser.removeUser();
         Navigate.goTo(contactListTableView, "/fxml/login.fxml");
     }
 
     @FXML
-    private void exit(){
+    private void exit() {
         Platform.exit();
         System.exit(0);
     }
 
     @FXML
-    private void goToAbout(){
+    private void goToAbout() {
         Navigate.goTo(contactListTableView, "/fxml/aboutme.fxml");
     }
 
-    private void enableEditDeleteButtons(){
+    private void enableEditDeleteButtons() {
         editButton.setVisible(true);
         deleteButton.setVisible(true);
     }
 
-    private void disableEditDeleteButtons(){
+    private void disableEditDeleteButtons() {
         editButton.setVisible(false);
         deleteButton.setVisible(false);
     }

@@ -1,4 +1,7 @@
 .idea
 /target
 /out
-/META-INF
+phonebook.lck
+phonebook.log
+phonebook.properties
+phonebook.script

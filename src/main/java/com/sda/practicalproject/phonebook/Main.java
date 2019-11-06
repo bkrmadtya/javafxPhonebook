@@ -45,9 +45,4 @@ public class Main extends Application {
         Session session = SessionManager.getSessionFactory().openSession();
         LauncherImpl.launchApplication(Main.class, MyPreloader.class, args);
     }
-//
-//    public static void setURL(){
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.getClass().
-//    }
 }
