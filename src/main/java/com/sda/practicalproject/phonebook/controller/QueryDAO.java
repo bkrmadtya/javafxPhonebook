@@ -23,20 +23,6 @@ public class QueryDAO {
         return user;
     }
 
-<<<<<<< HEAD
-//    public static List getAllUser() {
-//        Session session = SessionManager.getSessionFactory().getCurrentSession();
-//        session.beginTransaction();
-//
-//        Query query = session.createQuery("from User");
-//
-//        List list = query.list();
-//
-//        session.close();
-//
-//        return list;
-//    }
-=======
     @SuppressWarnings({"unchecked", "unsafe"})
     public static List<User> getAllUser() {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
@@ -50,7 +36,6 @@ public class QueryDAO {
 
         return query.list();
     }
->>>>>>> fcc46104119140f0fb6f8270bdaa0cc6a4437f29
 
     public static boolean usernameIsUnique(String username) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
