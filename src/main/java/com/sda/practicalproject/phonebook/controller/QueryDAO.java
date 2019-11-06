@@ -17,8 +17,8 @@ public class QueryDAO {
 
         Query query = session.createQuery("from User where username=:username");
         query.setParameter("username", username);
-
         User user = (User) query.uniqueResult();
+
         session.close();
         return user;
     }
@@ -29,11 +29,9 @@ public class QueryDAO {
         session.beginTransaction();
 
         Query query = session.createQuery("from User");
-
         List<User> list = query.list();
 
         session.close();
-
         return query.list();
     }
 
@@ -58,8 +56,32 @@ public class QueryDAO {
         List<Contact> list = query.list();
 
         session.close();
-
         return list;
+    }
+
+    public static Contact getContactByName(String name) {
+        Session session = SessionManager.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+
+        Query query = session.createQuery("from Contact where personName :=name");
+        query.setParameter("name", name);
+        Contact contact = (Contact) query.uniqueResult();
+
+        session.close();
+        return contact;
+    }
+
+    public static Contact getContactByNumber(Long number) {
+        Session session = SessionManager.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+
+        Query query = session.createQuery("from Contact where phonenumber=:phonenumber");
+        query.setParameter("phonenumber", number);
+        Contact contact = (Contact) query.uniqueResult();
+
+        session.close();
+        return contact;
+
     }
 
 

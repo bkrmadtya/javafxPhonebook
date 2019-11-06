@@ -40,14 +40,34 @@ public class CreateContactController {
 
     @FXML
     private void createRegistry() {
-        Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
-        contact.setCreatorId(creator.getUserId());
-        ContactDAO.createContact(contact);
-        goToContactList();
+        Long number = Long.parseLong(phoneText.getText());
+
+        if(numberIsUnique(number)){
+            Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), number);
+            contact.setCreatorId(creator.getUserId());
+            ContactDAO.createContact(contact);
+            goToContactList();
+        } else {
+            System.out.println("The number " + number + " is already taken!");
+        }
+
+
     }
+
     @FXML
     private void goToContactList() {
         Navigate.goTo(createButton, "/fxml/contact_list.fxml");
+    }
+
+    private boolean numberIsUnique(Long number){
+        boolean result = false;
+
+        Contact contact = QueryDAO.getContactByNumber(number);
+        if(contact == null){
+            result = true;
+        }
+
+        return result;
     }
 
 }
