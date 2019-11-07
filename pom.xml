@@ -25,9 +25,6 @@
                     <!-- Run shade goal on package phase -->
                     <execution>
                         <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
                         <configuration>
                             <transformers>
                                 <!-- add Main-Class to manifest file -->
