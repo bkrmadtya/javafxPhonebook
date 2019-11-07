@@ -30,7 +30,7 @@
                       </Label>
                   <HBox id="input" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-background-insets: 0, 0 0 1 0;" styleClass="hbox" stylesheets="@../styles/style.css">
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets top="30.0" />
                      </VBox.margin>
                      <children>
                         <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">

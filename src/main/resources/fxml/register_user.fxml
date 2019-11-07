@@ -97,12 +97,12 @@
                       </Label>
                       <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleUserRegister" prefHeight="35.0" prefWidth="90.0" stylesheets="@../styles/style.css" text="Register">
                           <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets top="15.0" />
                           </VBox.margin>
                       </Button>
                       <Hyperlink fx:id="loginUser" onAction="#goToLogin" text="Go to Login" underline="true">
                           <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets top="15.0" />
                           </VBox.margin>
                       </Hyperlink>
                   </children>

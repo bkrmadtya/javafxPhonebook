@@ -25,10 +25,18 @@ public class AboutMeController {
     private Hyperlink facebookLink;
 
     @FXML
+    private Hyperlink amirLinkedin;
+
+    @FXML
+    private Hyperlink githubRepoLink;
+
+    @FXML
     private void initialize() {
         linkedinLink.setTooltip(new Tooltip("https://www.linkedin.com/in/bkrmadtya/"));
         githubLink.setTooltip(new Tooltip("https://github.com/bkrmadtya"));
         facebookLink.setTooltip(new Tooltip("https://www.facebook.com/merophotos"));
+        amirLinkedin.setTooltip(new Tooltip("https://www.linkedin.com/in/amir-jalal/"));
+        githubRepoLink.setTooltip(new Tooltip("https://github.com/bkrmadtya/javafxPhonebook"));
     }
 
     @FXML
