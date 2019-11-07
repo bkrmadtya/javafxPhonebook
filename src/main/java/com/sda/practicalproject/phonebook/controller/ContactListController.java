@@ -62,7 +62,7 @@ public class ContactListController {
 
     @FXML
     private void initialize() {
-        disableEditDeleteButtons();
+        disableEditAndDeleteButtons();
 
         this.loggedInUser = LoggedInUser.getUser();
         List<Contact> contacts = QueryDAO.getAllContacts();
@@ -74,8 +74,6 @@ public class ContactListController {
         contacts.forEach(contact -> {
             contactListTableView.getItems().add(contact);
         });
-
-
     }
 
     public void setUser(User user) {
@@ -100,9 +98,7 @@ public class ContactListController {
             boolean isCreator = creatorId.equals(loggedInUser.getUserId());
 
             if (id != null && isCreator) {
-                enableEditDeleteButtons();
-            } else {
-                disableEditDeleteButtons();
+                enableEditAndDeleteButtons();
             }
 
         } catch (Exception e) {
@@ -183,12 +179,12 @@ public class ContactListController {
         Navigate.goTo(contactListTableView, "/fxml/aboutme.fxml");
     }
 
-    private void enableEditDeleteButtons() {
+    private void enableEditAndDeleteButtons() {
         editButton.setVisible(true);
         deleteButton.setVisible(true);
     }
 
-    private void disableEditDeleteButtons() {
+    private void disableEditAndDeleteButtons() {
         editButton.setVisible(false);
         deleteButton.setVisible(false);
     }
