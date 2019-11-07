@@ -148,9 +148,11 @@ public class ContactListController {
 
         if (result.get() == ButtonType.YES) {
             ContactDAO.deleteContact(id);
-            System.out.println(id);
+            this.initialize();
+        } else {
+            previousSelection = null;
+            deselectRow();
         }
-        this.initialize();
     }
 
     @FXML
