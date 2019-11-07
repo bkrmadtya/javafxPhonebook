@@ -9,6 +9,7 @@ import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class UserRegisterController {
@@ -17,10 +18,10 @@ public class UserRegisterController {
     private TextField usernameText;
 
     @FXML
-    private TextField passwordText;
+    private PasswordField passwordText;
 
     @FXML
-    private TextField passwordText2;
+    private PasswordField passwordText2;
 
     @FXML
     private Button registerButton;

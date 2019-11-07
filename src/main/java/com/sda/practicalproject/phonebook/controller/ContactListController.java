@@ -150,7 +150,7 @@ public class ContactListController {
             ContactDAO.deleteContact(id);
             this.initialize();
         } else {
-            previousSelection = null;
+            this.previousSelection = null;
             deselectRow();
         }
     }
