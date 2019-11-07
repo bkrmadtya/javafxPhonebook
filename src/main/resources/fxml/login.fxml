@@ -38,7 +38,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </ImageView>
-                      <TextField fx:id="usernameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="username">
+                      <TextField fx:id="usernameText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyTyped="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="username">
                           <font>
                               <Font size="14.0" />
                           </font>

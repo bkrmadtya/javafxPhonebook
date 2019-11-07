@@ -28,7 +28,7 @@ public class Contact {
     private String email;
 
     @Column
-    private long phoneNumber;
+    private Long phoneNumber;
 
     @Column
     private Long creatorId;

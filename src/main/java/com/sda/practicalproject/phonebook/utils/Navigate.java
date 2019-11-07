@@ -21,7 +21,7 @@ public class Navigate {
         }
     }
 
-    public static <T> void withParameter(Function<FXMLLoader,T> parameter, Node node, String path){
+    public static <T> void withParameter(Function<FXMLLoader, T> parameter, Node node, String path) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Navigate.class.getResource(path));
 
@@ -35,15 +35,13 @@ public class Navigate {
         Parent root = loader.getRoot();
 
         setUpScene(node, root);
-
     }
 
-    private static void setUpScene(Node node, Parent root){
+    private static void setUpScene(Node node, Parent root) {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/style.css");
         stage.setScene(scene);
-
     }
 }
 

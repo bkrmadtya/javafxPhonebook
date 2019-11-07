@@ -3,7 +3,7 @@ package com.sda.practicalproject.phonebook.utils;
 import javafx.application.HostServices;
 
 public class Utils {
-    public static HostServices hostServices;
+    private static HostServices hostServices;
 
     public static void setHostServices(HostServices hostService) {
         if (hostServices == null) {

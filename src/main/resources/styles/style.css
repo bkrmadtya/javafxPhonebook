@@ -16,9 +16,9 @@
     -fx-padding: 0 5 0 5;
 }
 
-#input:focused {
+#input:active {
     -fx-text-box-border: #999;
-    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-focused-background-color: -fx-text-box-border, -fx-background;
     -fx-background-insets: 0, 0 0 1 0;
 }
 
@@ -69,8 +69,6 @@
     -fx-border-color: #aaa;
 }
 
-
-
 /* For table view in the contact list page*/
 .table-view {
     -fx-background-color: transparent;
@@ -80,7 +78,6 @@
 .table-view:focused {
     -fx-background-color: transparent;
 }
-
 
 .table-view .column-header{
     -fx-background-color: #777;
@@ -112,12 +109,11 @@
     -fx-background-radius: 1;
 }
 
+/* For the menu items*/
 .menu-item {
     -fx-padding: 5 15 5 15;
     -fx-font-size: 15px;
 }
-
-
 
 .menu-item:focused,
 .menu-item: hover {

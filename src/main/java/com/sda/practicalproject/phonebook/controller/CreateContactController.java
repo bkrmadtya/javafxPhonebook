@@ -5,9 +5,11 @@ import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.LoggedInUser;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class CreateContactController {
@@ -30,6 +32,9 @@ public class CreateContactController {
     @FXML
     private Hyperlink cancelButton;
 
+    @FXML
+    private Label errorText;
+
     private User creator;
 
     @FXML
@@ -40,18 +45,25 @@ public class CreateContactController {
 
     @FXML
     private void createRegistry() {
-        Long number = Long.parseLong(phoneText.getText());
+        if (ValidateInput.isNotEmpty(nameText, addressText, emailText, phoneText)) {
+            if (ValidateInput.isNumber(phoneText.getText())) {
 
-        if (numberIsUnique(number)) {
-            Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), number);
-            contact.setCreatorId(creator.getUserId());
-            ContactDAO.createContact(contact);
-            goToContactList();
+                Long number = Long.parseLong(phoneText.getText());
+                if (numberIsUnique(number)) {
+                    Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), number);
+                    contact.setCreatorId(creator.getUserId());
+                    ContactDAO.createContact(contact);
+                    goToContactList();
+
+                } else {
+                    errorText.setText("Phone number should be unique!");
+                }
+            } else {
+                errorText.setText("Phone number is invalid format!");
+            }
         } else {
-            System.out.println("The number " + number + " is already taken!");
+            errorText.setText("Input fields cannot be empty");
         }
-
-
     }
 
     @FXML
