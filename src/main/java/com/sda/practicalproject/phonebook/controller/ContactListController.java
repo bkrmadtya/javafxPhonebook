@@ -22,6 +22,7 @@ import java.util.Optional;
 public class ContactListController {
 
     public MenuButton kebabMenu;
+
     @FXML
     private HBox createNewButton;
 
@@ -65,14 +66,12 @@ public class ContactListController {
     @FXML
     private void initialize() {
         disableEditAndDeleteButtons();
-
         this.loggedInUser = LoggedInUser.getUser();
+
         List<Contact> contacts = QueryDAO.getAllContacts();
 
         contactListTableView.getItems().clear();
-
         setColumnValues();
-
         contacts.forEach(contact -> {
             contactListTableView.getItems().add(contact);
         });
@@ -99,28 +98,35 @@ public class ContactListController {
 
             boolean isCreator = creatorId.equals(loggedInUser.getUserId());
 
-            if (id != null && isCreator) {
+            // toggle selection of the row
+            // for first selection (previousSelection == null) buttons are enabled and row is highlighted
+            // for second selection
+            // if it is the same row, then row selection and buttons are disabled and previousSelection is reset
+            // if it is a new row, then the row is highlighted
 
-                // toggle selection of the row
-                // for first selection (previousSelection == null) buttons are enabled and row is highlighted
-                // for second selection
-                // if it is the same row, then row selection and buttons are disabled and previousSelection is reset
-                // if it is a new row, then the row is highlighted
-                if (previousSelection == null || previousSelection != id) {
-                    previousSelection = id;
+            if (previousSelection == null || previousSelection != id) {
+                previousSelection = id;
+
+                // update and delete buttons only visible
+                // if the logged in user is creator
+                if (id != null && isCreator) {
                     enableEditAndDeleteButtons();
                 } else {
-                    previousSelection = null;
-                    deselectRow();
                     disableEditAndDeleteButtons();
                 }
+
+            } else {
+                deselectRow();
             }
+
         } catch (Exception e) {
             System.out.println("Empty row selected");
         }
     }
 
     private void deselectRow() {
+        this.previousSelection = null;
+        disableEditAndDeleteButtons();
         contactListTableView.getSelectionModel().clearSelection();
     }
 
@@ -129,9 +135,9 @@ public class ContactListController {
         Long id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete registry?");
+        alert.setTitle("Delete contact?");
         alert.setHeaderText(null);
-        alert.setContentText("Do you really want to delete this entry?");
+        alert.setContentText("Do you want to delete this contact?");
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image("icons/warning.png"));
 
@@ -151,7 +157,6 @@ public class ContactListController {
             this.initialize();
         }
 
-        this.previousSelection = null;
         deselectRow();
     }
 
@@ -174,11 +179,6 @@ public class ContactListController {
     @FXML
     private void goToCreateContact() {
         Navigate.goTo(contactListTableView, "/fxml/create_contact.fxml");
-    }
-
-    @FXML
-    private void onMenuClick() {
-        System.out.println("Menu Clicked");
     }
 
     @FXML

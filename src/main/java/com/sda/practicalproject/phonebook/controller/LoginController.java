@@ -43,13 +43,7 @@ public class LoginController {
         if (isValidUser(user, usernameText.getText(), passwordText.getText())) {
             LoggedInUser.setUser(user);
 
-            // go to phoneRegistry page with logged in user,
-            // so that newly created registry will have creator id too
-            Navigate.withParameter(loader -> {
-                ContactListController contactListController = loader.getController();
-                contactListController.setUser(user);
-                return contactListController;
-            }, loginButton, "/fxml/contact_list.fxml");
+            Navigate.goTo(loginButton, "/fxml/contact_list.fxml");
 
         } else {
             errorText.setText("Invalid Username or Password!");

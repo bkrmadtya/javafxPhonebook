@@ -41,7 +41,7 @@
                         <RowConstraints fillHeight="false" valignment="CENTER" vgrow="NEVER" />
                     </rowConstraints>
                     <children>
-                  <MenuButton fx:id="kebabMenu" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#onMenuClick" prefHeight="46.0" prefWidth="14.0" stylesheets="@../styles/style.css" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                  <MenuButton fx:id="kebabMenu" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="14.0" stylesheets="@../styles/style.css" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
                     <items>
                       <MenuItem fx:id="aboutOption" mnemonicParsing="false" onAction="#goToAbout" text="About" />
                       <MenuItem fx:id="logoutOption" mnemonicParsing="false" onAction="#logout" text="Logout" />
