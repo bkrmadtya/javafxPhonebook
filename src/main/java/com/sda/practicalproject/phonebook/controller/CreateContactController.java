@@ -33,7 +33,7 @@ public class CreateContactController {
     private User creator;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         this.creator = LoggedInUser.getUser();
         System.out.println("Creator id : " + creator.getUserId());
     }
@@ -42,7 +42,7 @@ public class CreateContactController {
     private void createRegistry() {
         Long number = Long.parseLong(phoneText.getText());
 
-        if(numberIsUnique(number)){
+        if (numberIsUnique(number)) {
             Contact contact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), number);
             contact.setCreatorId(creator.getUserId());
             ContactDAO.createContact(contact);
@@ -59,11 +59,11 @@ public class CreateContactController {
         Navigate.goTo(createButton, "/fxml/contact_list.fxml");
     }
 
-    private boolean numberIsUnique(Long number){
+    private boolean numberIsUnique(Long number) {
         boolean result = false;
 
         Contact contact = QueryDAO.getContactByNumber(number);
-        if(contact == null){
+        if (contact == null) {
             result = true;
         }
 

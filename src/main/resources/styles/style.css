@@ -1,26 +1,51 @@
 /* For input fields in all the pages*/
 
 .text-field {
-    -fx-text-box-border: #aaa;
+    -fx-text-box-border: transparent;
     -fx-background-color: -fx-text-box-border, -fx-background;
 }
 .text-field:focused {
-    -fx-focus-color: #555;
+   -fx-focus-color: transparent;
     -fx-background-color: -fx-focus-color, -fx-background;
 }
 
+ #input {
+    -fx-text-box-border: #bbb;
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0 5 0 5;
+}
+
+#input:focused {
+    -fx-text-box-border: #999;
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.hyperlink {
+    -fx-border-color: transparent;
+    -fx-padding: 4 0 4 0;
+}
+
 .button {
-    -fx-background-color: #15bfab;
     -fx-text-fill: white;
     -fx-font-size: 14;
 }
 
-#registerButton {
+#loginButton {
     -fx-background-color: #1f72bf;
 }
 
-#createButton {
-    -fx-background-color: #82c458;
+#registerButton {
+    -fx-background-color: #64c9b0;
+}
+
+#createButton{
+    -fx-background-color: #64c9b0;
+}
+
+#updateButton {
+    -fx-background-color: #1f72bf;
 }
 
 .hyperlink {
@@ -49,6 +74,7 @@
 /* For table view in the contact list page*/
 .table-view {
     -fx-background-color: transparent;
+    -fx-control-inner-background-alt: -fx-control-inner-background ;
 }
 
 .table-view:focused {
@@ -57,30 +83,31 @@
 
 
 .table-view .column-header{
-    -fx-background-color: #666;
+    -fx-background-color: #777;
+    -fx-margin: 0;
+    -fx-padding: 0;
 }
 
 .table-view .column-header-background .label{
-    -fx-background-color: #666;
+    -fx-background-color: #888;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 400;
-    -fx-padding: 7px 0 7px 0;
- }
-
-.table-cell{
-    -fx-text-fill: #444;
-    -fx-cell-size: 70px;
+    -fx-padding: 5px 0 5px 0;
  }
 
 .table-cell{
     -fx-padding: 0 0 0 10;
     -fx-alignment: CENTER-LEFT;
+    -fx-text-fill: #444;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #ddd;
-    -fx-table-cell-border-color: #ddd;
+    -fx-background-color: #ccc;
+    -fx-table-cell-border-color: #eee;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
@@ -90,10 +117,11 @@
     -fx-font-size: 15px;
 }
 
-.menu-item:focused, .menu-item: hover {
-    -fx-background-color: #ddd;
-    -fx-text-fill: black;
-    -fx-text-inner-color: black;
+
+
+.menu-item:focused,
+.menu-item: hover {
+    -fx-background-color: #ccc;
 }
 
 /* For image in the about me page*/

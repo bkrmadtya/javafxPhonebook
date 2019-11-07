@@ -5,70 +5,135 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.CreateContactController">
-    <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <children>
-            <Label text="Create New Registry">
-                <VBox.margin>
-                    <Insets top="20.0" />
-                </VBox.margin>
-                <font>
-                    <Font size="24.0" />
-                </font>
-            </Label>
-            <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="name">
-                <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0" />
-                </VBox.margin>
-                <font>
-                    <Font size="14.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="address">
-                <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0" />
-                </VBox.margin>
-                <font>
-                    <Font size="14.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="email">
-                <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0" />
-                </VBox.margin>
-                <font>
-                    <Font size="14.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="phone">
-                <VBox.margin>
-                    <Insets left="20.0" right="20.0" top="20.0" />
-                </VBox.margin>
-                <font>
-                    <Font size="14.0" />
-                </font>
-            </TextField>
-            <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createRegistry" prefHeight="35.0" prefWidth="90.0" text="Create">
-                <font>
-                    <Font size="14.0" />
-                </font>
-                <VBox.margin>
-                    <Insets left="50.0" right="50.0" top="20.0" />
-                </VBox.margin>
-                <padding>
-                    <Insets left="20.0" right="20.0" />
-                </padding>
-            </Button>
-            <Hyperlink fx:id="cancelButton" onAction="#goToContactList" text="Cancel">
-                <VBox.margin>
-                    <Insets top="10.0" />
-                </VBox.margin>
-            </Hyperlink>
-        </children>
-    </VBox>
+   <StackPane alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+          <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0">
+              <children>
+                  <Label text="Create New Registry" textFill="#323232">
+                      <VBox.margin>
+                          <Insets top="25.0" />
+                      </VBox.margin>
+                      <font>
+                          <Font size="24.0" />
+                      </font>
+                  </Label>
+               <HBox id="input" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../styles/style.css">
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../icons/user.png" />
+                        </image>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </ImageView>
+                        <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="name">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                  </children>
+               </HBox>
+               <HBox id="input" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../styles/style.css">
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../icons/phone.png" />
+                        </image>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </ImageView>
+                        <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="phone">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                  </children>
+               </HBox>
+               <HBox id="input" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../styles/style.css">
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../icons/address.png" />
+                        </image>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </ImageView>
+                        <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="address">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                  </children>
+               </HBox>
+               <HBox id="input" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="@../styles/style.css">
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../icons/email.png" />
+                        </image>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </ImageView>
+                        <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="email">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                  </children>
+               </HBox>
+               <Label fx:id="errorText" textFill="#fc3e3e">
+                  <VBox.margin>
+                     <Insets top="15.0" />
+                  </VBox.margin>
+               </Label>
+                  <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createRegistry" prefHeight="35.0" prefWidth="90.0" text="Create">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+                      <VBox.margin>
+                          <Insets top="15.0" />
+                      </VBox.margin>
+                      <padding>
+                          <Insets left="20.0" right="20.0" />
+                      </padding>
+                  </Button>
+              </children>
+          </VBox>
+      </children>
+   </StackPane>
+      <Hyperlink id="cancelButton" fx:id="cancelButton" contentDisplay="RIGHT" onAction="#goToContactList" stylesheets="@../styles/style.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icons/cancel.png" />
+            </image>
+         </ImageView>
+      </graphic>
+      </Hyperlink>
 
 </AnchorPane>
