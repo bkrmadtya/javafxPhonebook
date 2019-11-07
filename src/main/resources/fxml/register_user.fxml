@@ -17,7 +17,7 @@
     <children>
       <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="291.0" stylesheets="@../styles/style.css">
+              <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="291.0" stylesheets="@../styles/style.css">
                   <children>
                       <Label text="Register User">
                           <VBox.margin>
