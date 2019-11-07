@@ -56,4 +56,8 @@ public class UserRegisterController {
         Navigate.goTo(registerButton, "/fxml/login.fxml");
     }
 
+    @FXML
+    private void emptyErrorText() {
+        ValidateInput.resetError(errorText);
+    }
 }

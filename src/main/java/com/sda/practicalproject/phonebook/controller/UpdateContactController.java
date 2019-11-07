@@ -4,9 +4,12 @@ import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.Utils;
+import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class UpdateContactController {
@@ -25,6 +28,9 @@ public class UpdateContactController {
 
     @FXML
     private Button updateButton;
+
+    @FXML
+    private Label errorText;
 
     @FXML
     private Hyperlink cancelButton;
@@ -55,5 +61,10 @@ public class UpdateContactController {
     @FXML
     private void goToContactList() {
         Navigate.goTo(updateButton, "/fxml/contact_list.fxml");
+    }
+
+    @FXML
+    private void emptyErrorText(){
+        ValidateInput.resetError(errorText);
     }
 }

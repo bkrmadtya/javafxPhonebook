@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.LoggedInUser;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.Utils;
 import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -73,6 +74,11 @@ public class LoginController {
     @FXML
     private void goToRegister() {
         Navigate.goTo(loginButton, "/fxml/register_user.fxml");
+    }
+
+    @FXML
+    private void emptyErrorText(){
+        ValidateInput.resetError(errorText);
     }
 
 }

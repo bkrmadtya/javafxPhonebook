@@ -58,7 +58,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </ImageView>
-                      <PasswordField fx:id="passwordText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="password" />
+                      <PasswordField fx:id="passwordText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyTyped="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="password" />
                </children>
             </HBox>
                 <Label fx:id="errorText" textFill="#fc3e3e">

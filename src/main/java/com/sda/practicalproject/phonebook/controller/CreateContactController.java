@@ -5,6 +5,7 @@ import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.LoggedInUser;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.Utils;
 import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -69,6 +70,11 @@ public class CreateContactController {
     @FXML
     private void goToContactList() {
         Navigate.goTo(createButton, "/fxml/contact_list.fxml");
+    }
+
+    @FXML
+    private void emptyErrorText() {
+        ValidateInput.resetError(errorText);
     }
 
     private boolean numberIsUnique(Long number) {

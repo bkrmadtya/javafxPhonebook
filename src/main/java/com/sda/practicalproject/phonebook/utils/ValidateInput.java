@@ -1,6 +1,7 @@
 package com.sda.practicalproject.phonebook.utils;
 
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ValidateInput {
@@ -23,6 +24,10 @@ public class ValidateInput {
     public static boolean isNumber(String input) {
         String regex = "[0-9]+";
         return (input.matches(regex));
+    }
+
+    public static void resetError(Label errorText){
+        errorText.setText("");
     }
 
 }

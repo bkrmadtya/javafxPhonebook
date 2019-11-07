@@ -39,7 +39,7 @@
                            <Image url="@../icons/user.png" />
                         </image>
                      </ImageView>
-                        <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="name">
+                        <TextField fx:id="nameText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="name">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -59,7 +59,7 @@
                            <Image url="@../icons/phone.png" />
                         </image>
                      </ImageView>
-                        <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="phone">
+                        <TextField fx:id="phoneText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="phone">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -79,7 +79,7 @@
                            <Image url="@../icons/address.png" />
                         </image>
                      </ImageView>
-                        <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="address">
+                        <TextField fx:id="addressText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="address">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -99,7 +99,7 @@
                            <Image url="@../icons/email.png" />
                         </image>
                      </ImageView>
-                        <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="350.0" promptText="email">
+                        <TextField fx:id="emailText" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#emptyErrorText" prefHeight="35.0" prefWidth="350.0" promptText="email">
                             <font>
                                 <Font size="14.0" />
                             </font>
