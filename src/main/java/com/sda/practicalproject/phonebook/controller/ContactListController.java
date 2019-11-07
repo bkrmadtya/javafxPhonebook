@@ -60,9 +60,12 @@ public class ContactListController {
 
     private User loggedInUser;
 
+    private boolean toggleRowSelection;
+
     @FXML
     private void initialize() {
         disableEditAndDeleteButtons();
+        this.toggleRowSelection = false;
 
         this.loggedInUser = LoggedInUser.getUser();
         List<Contact> contacts = QueryDAO.getAllContacts();
@@ -90,6 +93,7 @@ public class ContactListController {
 
     @FXML
     private void rowIsSelected() {
+        this.toggleRowSelection = !this.toggleRowSelection;
         Long id = null;
         try {
             id = (Long) contactListTableView.getSelectionModel().getSelectedItem().getContactId();
@@ -99,11 +103,19 @@ public class ContactListController {
 
             if (id != null && isCreator) {
                 enableEditAndDeleteButtons();
+                if(!toggleRowSelection){
+                    disableEditAndDeleteButtons();
+                    deselectRow();
+                }
             }
 
         } catch (Exception e) {
             System.out.println("Empty row selected");
         }
+    }
+
+    private void deselectRow(){
+        contactListTableView.getSelectionModel().clearSelection();
     }
 
     @FXML

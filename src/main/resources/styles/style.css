@@ -85,11 +85,12 @@
 }
 
 .table-view .column-header-background .label{
+    -fx-alignment: CENTER_LEFT;
     -fx-background-color: #888;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 400;
-    -fx-padding: 5px 0 5px 0;
+    -fx-padding: 5 0 5 10;
  }
 
 .table-cell{
