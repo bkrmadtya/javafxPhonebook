@@ -126,6 +126,6 @@
             </ScrollPane>
          </children>
       </StackPane>
-      <Hyperlink fx:id="goBack" onMouseClicked="#goToRegister" text="Go Back" textFill="#757575" translateZ="1.0" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <Hyperlink fx:id="goBack" onMouseClicked="#goBack" text="Go Back" textFill="#757575" translateZ="1.0" underline="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
    </children>
 </AnchorPane>

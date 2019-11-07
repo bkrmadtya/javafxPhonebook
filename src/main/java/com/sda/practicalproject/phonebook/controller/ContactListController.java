@@ -6,6 +6,7 @@ import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.utils.LoggedInUser;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.OriginOfAbout;
 import com.sda.practicalproject.phonebook.utils.QueryDAO;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -178,6 +179,7 @@ public class ContactListController {
 
     @FXML
     private void goToAbout() {
+        OriginOfAbout.setOrigin("/fxml/contact_list.fxml");
         Navigate.goTo(contactListTableView, "/fxml/aboutme.fxml");
     }
 

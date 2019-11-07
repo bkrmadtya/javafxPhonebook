@@ -1,6 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.OriginOfAbout;
 import com.sda.practicalproject.phonebook.utils.Utils;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -31,10 +32,9 @@ public class AboutMeController {
     }
 
     @FXML
-    private void goToRegister() {
-        Navigate.goTo(aboutImage, "/fxml/contact_list.fxml");
+    private void goBack() {
+        Navigate.goTo(aboutImage, OriginOfAbout.getOrigin());
     }
-
 
     @FXML
     private void openLink(Event event) {

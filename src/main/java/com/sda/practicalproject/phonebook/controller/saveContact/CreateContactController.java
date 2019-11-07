@@ -3,10 +3,7 @@ package com.sda.practicalproject.phonebook.controller.saveContact;
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
-import com.sda.practicalproject.phonebook.utils.LoggedInUser;
-import com.sda.practicalproject.phonebook.utils.Navigate;
-import com.sda.practicalproject.phonebook.utils.QueryDAO;
-import com.sda.practicalproject.phonebook.utils.ValidateInput;
+import com.sda.practicalproject.phonebook.utils.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -72,6 +69,7 @@ public class CreateContactController {
 
     @FXML
     private void goToContactList() {
+        OriginOfAbout.setOrigin("/fxml/create_contact.fxml");
         Navigate.goTo(createButton, "/fxml/contact_list.fxml");
     }
 

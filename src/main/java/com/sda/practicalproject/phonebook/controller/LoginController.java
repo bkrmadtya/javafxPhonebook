@@ -67,10 +67,15 @@ public class LoginController {
         return result;
     }
 
-
     @FXML
     private void goToRegister() {
         Navigate.goTo(loginButton, "/fxml/register_user.fxml");
+    }
+
+    @FXML
+    private void goToAbout() {
+        OriginOfAbout.setOrigin("/fxml/login.fxml");
+        Navigate.goTo(loginButton, "/fxml/aboutme.fxml");
     }
 
     @FXML

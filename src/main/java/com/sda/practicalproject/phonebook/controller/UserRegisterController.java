@@ -3,6 +3,7 @@ package com.sda.practicalproject.phonebook.controller;
 import com.sda.practicalproject.phonebook.database.user.User;
 import com.sda.practicalproject.phonebook.database.user.UserDAO;
 import com.sda.practicalproject.phonebook.utils.Navigate;
+import com.sda.practicalproject.phonebook.utils.OriginOfAbout;
 import com.sda.practicalproject.phonebook.utils.QueryDAO;
 import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
@@ -58,6 +59,12 @@ public class UserRegisterController {
     @FXML
     private void goToLogin() {
         Navigate.goTo(registerButton, "/fxml/login.fxml");
+    }
+
+    @FXML
+    private void goToAbout() {
+        OriginOfAbout.setOrigin("/fxml/register_user.fxml");
+        Navigate.goTo(registerButton, "/fxml/aboutme.fxml");
     }
 
     @FXML
