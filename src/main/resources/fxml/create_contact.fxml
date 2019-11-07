@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.CreateContactController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.saveContact.CreateContactController">
    <StackPane alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
           <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0">
@@ -111,7 +111,7 @@
                      <Insets top="15.0" />
                   </VBox.margin>
                </Label>
-                  <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#createRegistry" prefHeight="35.0" prefWidth="90.0" text="Create">
+                  <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#handleCreateContact" prefHeight="35.0" prefWidth="90.0" text="Create">
                       <font>
                           <Font size="14.0" />
                       </font>

@@ -81,7 +81,18 @@ public class QueryDAO {
 
         session.close();
         return contact;
+    }
 
+
+    public static boolean numberIsUnique(Long number) {
+        boolean result = false;
+
+        Contact contact = QueryDAO.getContactByNumber(number);
+        if (contact == null) {
+            result = true;
+        }
+
+        return result;
     }
 
 

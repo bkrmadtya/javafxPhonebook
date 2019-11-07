@@ -28,10 +28,14 @@ public class UserRegisterController {
 
     @FXML
     private void handleUserRegister() {
-        if(ValidateInput.isNotEmpty(usernameText, passwordText, passwordText2)){
-            createUser();
-        } else{
-            errorText.setText("The fields cannot be empty");
+        if(!ValidateInput.isNumber(usernameText.getText())){
+            if(ValidateInput.isNotEmpty(usernameText, passwordText, passwordText2)){
+                createUser();
+            } else{
+                errorText.setText("Input fields cannot be empty!");
+            }
+        } else {
+            errorText.setText("Username should contain characters!");
         }
     }
 
@@ -49,7 +53,6 @@ public class UserRegisterController {
             errorText.setText("Username already taken!");
         }
     }
-
 
     @FXML
     private void goToLogin() {
