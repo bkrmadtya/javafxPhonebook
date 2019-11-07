@@ -104,7 +104,7 @@ public class ContactListController {
                 // toggle selection of the row
                 // for first selection (previousSelection == null) buttons are enabled and row is highlighted
                 // for second selection
-                // if it is the same row, then it is disabled and previousSelection is reset
+                // if it is the same row, then row selection and buttons are disabled and previousSelection is reset
                 // if it is a new row, then the row is highlighted
                 if (previousSelection == null || previousSelection != id) {
                     previousSelection = id;
@@ -149,10 +149,10 @@ public class ContactListController {
         if (result.get() == ButtonType.YES) {
             ContactDAO.deleteContact(id);
             this.initialize();
-        } else {
-            this.previousSelection = null;
-            deselectRow();
         }
+
+        this.previousSelection = null;
+        deselectRow();
     }
 
     @FXML
