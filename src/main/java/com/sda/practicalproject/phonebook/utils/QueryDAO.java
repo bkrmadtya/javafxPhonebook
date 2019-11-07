@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.controller;
+package com.sda.practicalproject.phonebook.utils;
 
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;
@@ -59,18 +59,6 @@ public class QueryDAO {
         return list;
     }
 
-    public static Contact getContactByName(String name) {
-        Session session = SessionManager.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-
-        Query query = session.createQuery("from Contact where personName :=name");
-        query.setParameter("name", name);
-        Contact contact = (Contact) query.uniqueResult();
-
-        session.close();
-        return contact;
-    }
-
     public static Contact getContactByNumber(Long number) {
         Session session = SessionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
@@ -83,7 +71,6 @@ public class QueryDAO {
         return contact;
     }
 
-
     public static boolean numberIsUnique(Long number) {
         boolean result = false;
 
@@ -94,6 +81,5 @@ public class QueryDAO {
 
         return result;
     }
-
 
 }

@@ -1,10 +1,7 @@
 package com.sda.practicalproject.phonebook.controller;
 
 import com.sda.practicalproject.phonebook.database.user.User;
-import com.sda.practicalproject.phonebook.utils.LoggedInUser;
-import com.sda.practicalproject.phonebook.utils.Navigate;
-import com.sda.practicalproject.phonebook.utils.Utils;
-import com.sda.practicalproject.phonebook.utils.ValidateInput;
+import com.sda.practicalproject.phonebook.utils.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 

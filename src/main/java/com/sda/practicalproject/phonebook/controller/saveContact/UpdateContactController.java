@@ -1,6 +1,6 @@
 package com.sda.practicalproject.phonebook.controller.saveContact;
 
-import com.sda.practicalproject.phonebook.controller.QueryDAO;
+import com.sda.practicalproject.phonebook.utils.QueryDAO;
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.contact.ContactDAO;
 import com.sda.practicalproject.phonebook.database.user.User;
@@ -9,7 +9,7 @@ import com.sda.practicalproject.phonebook.utils.ValidateInput;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 
-public class UpdateContactController extends SaveContactController {
+public class UpdateContactController extends CreateContactController {
     @FXML
     private Hyperlink cancelButton;
 
