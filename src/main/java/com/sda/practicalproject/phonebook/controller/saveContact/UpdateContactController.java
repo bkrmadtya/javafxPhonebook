@@ -14,8 +14,8 @@ public class UpdateContactController extends CreateContactController {
     private Hyperlink cancelButton;
 
     private Long id;
-
     private User creator;
+    private Long initialNumber;
 
     public void fillData(String name, String address, String email, Long phoneNumber, Long id, User creator) {
         this.nameText.setText(name);
@@ -24,6 +24,7 @@ public class UpdateContactController extends CreateContactController {
         this.phoneText.setText(String.valueOf(phoneNumber));
         this.id = id;
         this.creator = creator;
+        this.initialNumber = phoneNumber;
     }
 
     @FXML
@@ -41,7 +42,7 @@ public class UpdateContactController extends CreateContactController {
 
     private void updateContact() {
         Long number = Long.parseLong(phoneText.getText());
-        if (QueryDAO.numberIsUnique(number)) {
+        if (QueryDAO.numberIsUnique(number) || initialNumber.equals(number)) {
             Contact updatedContact = new Contact(nameText.getText(), addressText.getText(), emailText.getText(), Long.parseLong(phoneText.getText()));
             updatedContact.setCreatorId(creator.getUserId());
 

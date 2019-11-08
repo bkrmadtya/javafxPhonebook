@@ -6,7 +6,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
-import javax.management.Query
 
 @RunWith(JUnit4.class)
 class QueryDAOTest {
