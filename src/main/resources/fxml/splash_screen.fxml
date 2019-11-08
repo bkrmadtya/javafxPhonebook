@@ -11,37 +11,37 @@
 
 <StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.practicalproject.phonebook.controller.SplashScreenController">
    <children>
-      <Pane disable="true" prefHeight="200.0" prefWidth="200.0" />
-      <Pane disable="true" opacity="0.23" prefHeight="341.0" prefWidth="590.0" style="-fx-background-color: black;" />
+      <Pane disable="true" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.55" prefHeight="217.0" prefWidth="373.0" style="-fx-background-color: gray;" StackPane.alignment="CENTER" />
+      <Pane disable="true" opacity="0.23" prefHeight="341.0" prefWidth="590.0" style="-fx-background-color: black;" StackPane.alignment="CENTER" />
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" StackPane.alignment="CENTER">
          <children>
-            <Label layoutX="349.0" layoutY="155.0" text="Welcome" textFill="WHITE">
+            <Label layoutX="342.0" layoutY="155.0" text="Welcome" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="349.0" layoutY="178.0" text="to" textFill="WHITE">
+            <Label layoutX="342.0" layoutY="178.0" text="to" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="348.0" layoutY="196.0" text="Phonebook" textFill="WHITE">
+            <Label layoutX="341.0" layoutY="196.0" text="Phonebook" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua Bold" size="27.0" />
                </font>
             </Label>
-            <ImageView fitHeight="167.0" fitWidth="141.0" layoutX="207.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="111.0">
+            <ImageView fitHeight="167.0" fitWidth="141.0" layoutX="200.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="111.0">
                <image>
                   <Image url="@../icons/phone-book.png" />
                </image>
             </ImageView>
-            <ProgressBar fx:id="progressBar" layoutX="220.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="5.0" prefWidth="274.0" progress="0.4" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="262.0" />
-            <Label fx:id="progress" layoutX="220.0" layoutY="269.0" text="Loading" textFill="WHITE" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="269.0">
+            <ProgressBar fx:id="progressBar" layoutX="213.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="5.0" prefWidth="274.0" progress="0.4" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="262.0" />
+            <Label fx:id="progress" layoutX="213.0" layoutY="269.0" text="Loading" textFill="WHITE" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="269.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="349.0" layoutY="237.0" text="\@Bikram Karki 2019" textFill="WHITE" AnchorPane.topAnchor="237.0">
+            <Label layoutX="342.0" layoutY="237.0" text="\@Bikram Karki 2019" textFill="WHITE" AnchorPane.topAnchor="237.0">
                <font>
                   <Font size="10.0" />
                </font>

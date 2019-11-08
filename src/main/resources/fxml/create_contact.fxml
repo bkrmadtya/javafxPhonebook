@@ -18,7 +18,7 @@
       <children>
           <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="290.0">
               <children>
-                  <Label text="Create New Registry" textFill="#323232">
+                  <Label text="Create New Contact" textFill="#323232">
                       <VBox.margin>
                           <Insets top="25.0" />
                       </VBox.margin>
