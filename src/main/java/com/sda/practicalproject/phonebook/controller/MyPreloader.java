@@ -31,7 +31,9 @@ public class MyPreloader extends Preloader {
     @Override
     public void handleApplicationNotification(PreloaderNotification info) {
         if(info instanceof ProgressNotification){
-            SplashScreenController.label.setText("Loading " + ((ProgressNotification) info).getProgress() + "%");
+            double progress = ((ProgressNotification) info).getProgress();
+            SplashScreenController.statProgressBar.setProgress(progress / 100);
+            SplashScreenController.label.setText("Loading " + (int)progress + "%");
         }
     }
 

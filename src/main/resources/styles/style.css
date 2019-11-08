@@ -1,3 +1,21 @@
+/* For progress bar */
+
+.progress-bar > .bar {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 5;
+
+}
+
+.progress-bar > .track {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 0;
+    -fx-margin: 0;
+    -fx-border-width: 0;
+}
+
+
 /* For input fields in all the pages*/
 
 .text-field {

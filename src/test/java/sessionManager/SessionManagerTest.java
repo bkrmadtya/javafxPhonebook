@@ -1,4 +1,4 @@
-package com.sda.practicalproject.phonebook.utils.sessionManager;
+package sessionManager;
 
 import com.sda.practicalproject.phonebook.database.contact.Contact;
 import com.sda.practicalproject.phonebook.database.user.User;
@@ -10,7 +10,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.Properties;
 
-public class SessionManager {
+public class SessionManagerTest {
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
@@ -20,7 +20,7 @@ public class SessionManager {
                 Properties settings = new Properties();
 
                 settings.put(Environment.DRIVER, "org.hsqldb.jdbcDriver");
-                settings.put(Environment.URL, "jdbc:hsqldb:file:phonebook-files/phonebook;shutdown=true;hsqldb.lock_file=false");
+                settings.put(Environment.URL, "jdbc:hsqldb:mem:phonebook-test");
                 settings.put(Environment.USER, "sa");
                 settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.HSQLDialect");

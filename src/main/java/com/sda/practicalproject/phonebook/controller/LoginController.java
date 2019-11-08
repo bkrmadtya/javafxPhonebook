@@ -34,7 +34,7 @@ public class LoginController {
         if (ValidateInput.isNotEmpty(usernameText, passwordText)) {
             login();
         } else {
-            errorText.setText("The fields cannot be empty!");
+            errorText.setText("Credentials cannot be empty!");
         }
     }
 
