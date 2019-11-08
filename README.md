@@ -1,14 +1,27 @@
-## **JavaFx phone book desktop application**
+# JavaFX Phonebook Application
+
+| | About the Project|
+| --- | --- |
+| **Project Name** | Phonebook (Desktop Application) |
+| **Institute** | Software Development Academy |
+| **Class** | Java Helsinki 1, 2019 |
+| **Project Instructor** | [Amir Jalal](https://www.linkedin.com/in/amir-jalal/) |
+| **Github Repository** | [https://github.com/bkrmadtya/javafxPhonebook](https://github.com/bkrmadtya/javafxPhonebook) |
+| **Tools Used** | Java, JavaFX, Hibernate, HsqlDB, JUnit, TestFX, CSS, Lombok |
+| **Features** | Login, Registration, CRUD for contacts, Validation for user credentials and number for phone number |
+
+
 #### Use cases
  * User can register with unique username
- * User can used the registered credentials to login
- * User can create a new entry in the phone book
- 
- #### Topics implemented
- * JavaFX
- * Hibernate
- * Java
- 
+ * User can use the registered credentials to login
+ * User can create a new contact
+ * User can update the contact (Creator only)
+ * User can delete the contact (Creator only)
+ * User can logout/ close the application
+
+#### Different Activity Screens
+
+
  
  #### Credits
 Phone book icon: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
