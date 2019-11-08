@@ -16,7 +16,6 @@ class QueryDAOTest {
     @Test
     void testGetUserByName() {
         User user = new User("user", "password");
-
     }
 
     void testGetAllUser() {
