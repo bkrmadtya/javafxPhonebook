@@ -8,7 +8,7 @@
 | **Project Instructor** | [Amir Jalal](https://www.linkedin.com/in/amir-jalal/) |
 | **Github Repository** | [https://github.com/bkrmadtya/javafxPhonebook](https://github.com/bkrmadtya/javafxPhonebook) |
 | **Tools Used** | Java, JavaFX, Hibernate, HsqlDB, JUnit, TestFX, CSS, Lombok |
-| **Features** | Login, Registration, CRUD for contacts, Validation for user credentials and number for phone number |
+| **Features** | Login, Registration, CRUD for contacts, Validation for user credentials, and number for phone number |
 
 
 #### Use cases
@@ -19,9 +19,67 @@
  * User can delete the contact (Creator only)
  * User can logout/ close the application
 
-#### Different Activity Screens
+<p align="center">
+<b>Different Activity Screens</b>
+ </p>
 
+<br>
+<p align="center">
+<b>Login Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/login.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
 
+<p align="center">
+<b>Register Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/register.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
+
+<p align="center">
+<b>Phonebook Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/phonebook.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
+
+<p align="center">
+<b>Update, Delete button Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/buttons.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
+
+<p align="center">
+<b>Create Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/create.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
+
+<p align="center">
+<b>Update Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/update.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br> <br>
+
+<p align="center">
+<b>Delete Screen</b> <br> <br>
+<kbd>
+<a href="url"><img src="https://github.com/bkrmadtya/javafxPhonebook/blob/master/src/main/resources/screenshots/delete.png" height="auto" width="500" style="border-radius:50%"></a>
+</kbd>
+ </p>
+ <br>
+ <br> <br>
  
  #### Credits
 Phone book icon: <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a><br>
